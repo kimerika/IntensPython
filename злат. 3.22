@@ -1,0 +1,9 @@
+num = int(input("Введите трехзначное число: "))
+if num < 100 or num > 999:
+    print("Ошибка ввода")
+else:
+    ones = num % 10
+    tens = (num % 100) // 10
+    hundreds = num // 100
+    new_num = ones * 100 + tens * 10 + hundreds
+    print("Число, полученное при зачеркивании первой цифры слева и приписывании ее в конец:", new_num)
