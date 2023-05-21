@@ -1,0 +1,27 @@
+p = int(input("Введите количество месяцев с начала 1990 года: "))
+days = p * 30 + 2
+if days <= 31:
+    x = 1
+elif days <= 59:
+    x = 2
+elif days <= 90:
+    x = 3
+elif days <= 120:
+    x = 4
+elif days <= 151:
+    x = 5
+elif days <= 181:
+    x = 6
+elif days <= 212:
+    x = 7
+elif days <= 243:
+    x = 8
+elif days <= 273:
+    x = 9
+elif days <= 304:
+    x = 10
+elif days <= 334:
+    x = 11
+else:
+    x = 12
+print(f"Месяц этого дня - {x}")
