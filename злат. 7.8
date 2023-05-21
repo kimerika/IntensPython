@@ -1,0 +1,11 @@
+numbers = []
+number = int(input("Введите целое число (0 для завершения): "))
+while number != 0:
+    numbers.append(number)
+    number = int(input("Введите целое число (0 для завершения): "))
+
+sum_of_numbers = sum(numbers)
+count_of_numbers = len(numbers)
+
+print("Сумма всех чисел:", sum_of_numbers)
+print("Количество всех чисел:", count_of_numbers)
