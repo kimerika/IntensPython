@@ -1,0 +1,8 @@
+athlete1_scores = [8, 9, 7, 6, 8]
+athlete2_scores = [10, 7, 6, 8, 9]
+
+athlete1_total_score = sum(athlete1_scores)
+athlete2_total_score = sum(athlete2_scores)
+
+print("Сумма баллов первого спортсмена:", athlete1_total_score)
+print("Сумма баллов второго спортсмена:", athlete2_total_score)
