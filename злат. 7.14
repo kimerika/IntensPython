@@ -1,0 +1,6 @@
+n = int(input("Введите количество вещественных чисел: "))
+a = []
+for i in range(n):
+    a.append(float(input(f"Введите a{i+1}: ")))
+sum_of_squares = sum([n**2 for n in a])
+print("Сумма квадратов: ", sum_of_squares)
