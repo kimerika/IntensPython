@@ -1,0 +1,6 @@
+num = int(input("Введите номер места: "))
+if num < 1 or num > 36:
+    print("Такого места не существует")
+else:
+    coupe_num = (num - 1) // 4 + 1
+    print(f"Место {num} находится в купе номер {coupe_num}")
