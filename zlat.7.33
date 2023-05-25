@@ -1,0 +1,18 @@
+january_rainfall = []
+march_rainfall = []
+
+# заполнение списков количеством осадков
+for i in range(31):
+    rainfall = int(input("Введите количество осадков за " + str(i + 1) + " января: "))
+    january_rainfall.append(rainfall)
+
+for i in range(31):
+    rainfall = int(input("Введите количество осадков за " + str(i + 1) + " марта: "))
+    march_rainfall.append(rainfall)
+
+# вычисление среднедневного количества осадков
+january_average_rainfall = sum(january_rainfall) / len(january_rainfall)
+march_average_rainfall = sum(march_rainfall) / len(march_rainfall)
+
+print("Среднедневное количество осадков в январе: ", january_average_rainfall)
+print("Среднедневное количество осадков в марте: ", march_average_rainfall)
