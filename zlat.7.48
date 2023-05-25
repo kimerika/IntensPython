@@ -1,0 +1,5 @@
+newspaper_pages = [10, 12, 16, 8]  # список с количеством страниц в каждой газете
+magazine_pages = [20, 24, 28, 32, 36, 40]  # список с количеством страниц в каждом журнале
+
+total_magazine_pages = sum([page for page in magazine_pages if page > max(newspaper_pages)])
+print(f'Общее число страниц во всех журналах: {total_magazine_pages}')
