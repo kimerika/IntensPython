@@ -1,0 +1,19 @@
+# Получаем t и p, а также создаем список из p целых чисел
+t = int(input("Введите t: "))
+p = int(input("Введите п: "))
+numbers = []
+for i in range(p):
+    number = int(input(f"Введите число c{i+1}: "))
+    numbers.append(number)
+
+# Инициализируем переменную для суммы чисел не больше t
+sum_le_t = 0
+
+# Считаем сумму чисел не больше t и проверяем условие
+for num in numbers:
+    if num <= t:
+        sum_le_t += num
+if sum_le_t % p == 0:
+    print("Сумма чисел, не превышающих t, кратна р.")
+else:
+    print("Сумма чисел, не превышающих t, не кратна р.")
