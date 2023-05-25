@@ -1,0 +1,6 @@
+a) a = [a1, a2, ..., ap]
+sum_ = a[0] + a[-1]
+print(sum_)
+b) a = [a1, a2, ..., ap]
+diff = a[1] - a[-2]
+print(diff)
