@@ -1,0 +1,9 @@
+grades = []  # создаем пустой список для хранения оценок
+
+for i in range(20):
+  grade = int(input(f"Введите оценку ученика {i+1}: "))
+  grades.append(grade)  # добавляем оценку в список grades
+
+avg = sum(grades) / len(grades)  # вычисляем среднюю оценку
+
+print(f"Средняя оценка по физике каждого из {len(grades)} учеников равна {avg}.")
