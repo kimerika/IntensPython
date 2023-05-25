@@ -1,0 +1,7 @@
+students = [20, 25, 30, 28, 35, 38, 40, 42, 45, 50, 55]  # список с количеством учеников в каждом классе
+
+class_numbers = [i+1 for i in range(len(students))]  # список с номерами классов
+class_students = list(zip(class_numbers, students))  # список кортежей с номерами классов и количеством учеников
+
+odd_classes_students = sum([class_student[1] for class_student in class_students if class_student[0] % 2 != 0])
+print(f'Общее число детей, учащихся в первых, третьих, пятых и т.д. классах школы: {odd_classes_students}')
