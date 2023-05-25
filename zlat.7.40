@@ -1,0 +1,6 @@
+nums = [a1, a2, ..., ap]
+sum_ = 0
+for num in nums:
+    if num > 10.75:
+        sum_ += num
+print(sum_)
