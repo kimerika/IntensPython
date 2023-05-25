@@ -1,0 +1,17 @@
+areas = []
+crop_yield = []
+
+# заполнение списков площадями и урожайностью
+for i in range(10):
+    area = float(input("Введите площадь, засеянную пшеницей, " + str(i+1) + " района: "))
+    areas.append(area)
+
+    yield_ = float(input("Введите среднюю урожайность пшеницы в " + str(i+1) + " районе (в центнерах с гектара): "))
+    crop_yield.append(yield_)
+
+# вычисление общего количества пшеницы и средней урожайности по области
+total_wheat = sum(areas) * sum(crop_yield) / len(crop_yield)
+average_yield = sum(crop_yield) / len(crop_yield)
+
+print("Количество пшеницы, собранное в области: ", total_wheat, "центнеров")
+print("Средняя урожайность пшеницы в области: ", average_yield, "центнеров с гектара")
