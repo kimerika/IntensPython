@@ -1,0 +1,18 @@
+class1 = []
+class2 = []
+
+# заполнение классов ростом учеников
+for i in range(20):
+    height = float(input("Введите рост ученика " + str(i+1) + " первого класса: "))
+    class1.append(height)
+
+for i in range(20):
+    height = float(input("Введите рост ученика " + str(i + 1) + " второго класса: "))
+    class2.append(height)
+
+# вычисление среднего роста для каждого класса
+class1_average_height = sum(class1) / len(class1)
+class2_average_height = sum(class2) / len(class2)
+
+print("Средний рост учеников первого класса: ", class1_average_height)
+print("Средний рост учеников второго класса: ", class2_average_height)
