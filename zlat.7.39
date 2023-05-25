@@ -1,0 +1,28 @@
+n = int(input("Введите количество чисел: "))
+
+a = []
+
+for i in range(n):
+    ai = int(input("Введите число: "))
+    a.append(ai)
+
+# подсчет суммы модулей чисел
+sum_abs_a = sum([abs(ai) for ai in a])
+print("Сумма модулей чисел: ", sum_abs_a)
+
+# подсчет произведения модулей чисел
+mul_abs_a = 1
+for ai in a:
+    mul_abs_a *= abs(ai)
+print("Произведение модулей чисел: ", mul_abs_a)
+
+# подсчет суммы последовательных сумм
+sum_pairs_a = [a[i]+a[i+1] for i in range(n-1)]
+print("Суммы последовательных пар чисел: ", sum_pairs_a)
+
+# подсчет знакочередующейся суммы
+sum_alternate_a = 0
+for i in range(n):
+    sign = (-1)**(i+1)
+    sum_alternate_a += sign * a[i]
+print("Знакочередующаяся сумма: ", sum_alternate_a
