@@ -1,0 +1,18 @@
+class1 = []
+class2 = []
+
+# заполнение классов оценками по физике
+for i in range(20):
+    mark = int(input("Введите оценку ученика " + str(i+1) + " первого класса: "))
+    class1.append(mark)
+
+for i in range(20):
+    mark = int(input("Введите оценку ученика " + str(i + 1) + " второго класса: "))
+    class2.append(mark)
+
+# вычисление средней оценки для каждого класса
+class1_average_mark = sum(class1) / len(class1)
+class2_average_mark = sum(class2) / len(class2)
+
+print("Средняя оценка учеников первого класса: ", class1_average_mark)
+print("Средняя оценка учеников второго класса: ", class2_average_mark)
