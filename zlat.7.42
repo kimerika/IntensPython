@@ -1,0 +1,6 @@
+nums = [d1, d2, ..., d10]
+sum_ = 0
+for num in nums:
+    if num % 2 == 0:
+        sum_ += num
+print(sum_)
