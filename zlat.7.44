@@ -1,0 +1,5 @@
+nums = [a1, a2, ..., a20]
+sum_ = 0
+for i in range(1, len(nums), 2):
+    sum_ += nums[i]
+print(sum_)
