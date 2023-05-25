@@ -1,0 +1,17 @@
+districts_population = []
+districts_area = []
+
+# заполнение списков количеством жителей и площадью районов
+for i in range(12):
+    population = float(input("Введите количество жителей " + str(i+1) + " района (в тысячах человек): "))
+    districts_population.append(population)
+
+    area = float(input("Введите площадь " + str(i+1) + " района (в км2): "))
+    districts_area.append(area)
+
+# вычисление средней плотности населения по области
+total_population = sum(districts_population)
+total_area = sum(districts_area)
+average_density = total_population / total_area
+
+print("Средняя плотность населения по области: ", average_density, "тысяч человек на км2")
