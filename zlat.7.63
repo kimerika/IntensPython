@@ -1,0 +1,13 @@
+grades = [4, 5, 4, 2, 3, 5, 5, 2, 5, 4, 4, 3, 5, 4, 2, 5]
+
+fives_count = 0
+twos_count = 0
+
+for grade in grades:
+    if grade == 5:
+        fives_count += 1
+    elif grade == 2:
+        twos_count += 1
+        
+print("Количество пятерок: ", fives_count)
+print("Количество двоек: ", twos_count)
