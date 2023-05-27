@@ -1,0 +1,14 @@
+numbers = []
+num = int(input())
+while num != -1:
+    numbers.append(num)
+    num = int(input())
+
+i = 0
+while i < len(numbers) - 1:
+    if numbers[i] == numbers[i+1]:
+        print("Первая пара одинаковых чисел на местах", i+1, "и", i+2)
+        break
+    i += 1
+else:
+    print("В последовательности нет пар одинаковых чисел")
