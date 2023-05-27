@@ -1,0 +1,11 @@
+precipitation = [1, 0, 3, 0, 5, 1, 0, 0, 2, 0, 4, 1]  # количество осадков за каждый день марта
+no_precipitation_days = 0  # счетчик дней без осадков
+
+for p in precipitation:
+    if p == 0:  # если нет осадков в этот день
+        no_precipitation_days += 1  # увеличиваем счетчик
+
+if no_precipitation_days == 10:
+    print("Было 10 дней без осадков в марте.")
+else:
+    print("Не было 10 дней без осадков в марте.")
