@@ -1,0 +1,13 @@
+count = 0
+for num in [a1, a2, ..., am]:
+    if num > m:
+        count += 1
+count2 = 0
+for num in [a1, a2, ..., am]:
+    if num > m and num % p == 0:
+        count2 += 1
+p = 3
+if count2 == p:
+    print("Количество чисел, больших %d и кратных %d, равно %d" % (m, p, p))
+else:
+    print("Количество чисел, больших %d и кратных %d, не равно %d" % (m, p, p))
