@@ -1,0 +1,6 @@
+sentence = "мама мыла раму" 
+words_array = sentence.split() 
+reverse_words_array = words_array[::-1] 
+reverse_sentence = " ".join(reverse_words_array) 
+ 
+print(reverse_sentence)
