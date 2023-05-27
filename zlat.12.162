@@ -1,0 +1,6 @@
+number = float(input("Введите положительное вещественное число: ")) 
+integer_part_count = len(str(int(number))) #количество цифр в целой части 
+fraction_part = number - int(number) #дробная часть числа 
+fractional_part_count = len(str(int(fraction_part * 10 ** 6))) #количество цифр в дробной части (с точностью до 6 знаков после запятой) 
+print(f"Количество цифр в целой части: {integer_part_count}") 
+print(f"Количество цифр в дробной части: {fractional_part_count}")
