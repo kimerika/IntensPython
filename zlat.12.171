@@ -1,0 +1,13 @@
+word2 = "информация" 
+ 
+unique_word1_letters = set([letter for letter in word1 if word1.count(letter) == 1]) 
+unique_word2_letters = set([letter for letter in word2 if word2.count(letter) == 1]) 
+common_unique_letters = unique_word1_letters & unique_word2_letters 
+ 
+for letter in word1: 
+    if letter in common_unique_letters: 
+        print(letter, end=" ") 
+ 
+for letter in word2: 
+    if letter in common_unique_letters: 
+        print(letter, end=" ")
