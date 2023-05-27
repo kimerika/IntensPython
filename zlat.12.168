@@ -1,0 +1,7 @@
+word1 = input("Введите первое слово: ") 
+word2 = input("Введите второе слово: ") 
+for letter in word1: 
+    if letter in word2: 
+        print("да", end=" ") 
+    else: 
+        print("нет", end=" ")
