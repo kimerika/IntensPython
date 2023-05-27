@@ -1,0 +1,8 @@
+word1 = "процессор" 
+word2 = "информация" 
+ 
+for letter in set(word1): 
+    if letter in word2: 
+        print("да", end=" ") 
+    else: 
+        print("нет", end=" ")
