@@ -1,0 +1,22 @@
+n = int(input("Введите натуральное число n: "))
+a = []
+for i in range(n):
+    a.append(int(input(f"Введите a{i+1}: ")))
+
+max_a = a[0]
+max_idx = 0
+min_a = a[0]
+min_idx = 0
+
+for i in range(1, n):
+    # ищем максимальный элемент и его индекс
+    if a[i] >= max_a:
+        max_a = a[i]
+        max_idx = i
+    # ищем минимальный элемент и его индекс
+    if a[i] <= min_a:
+        min_a = a[i]
+        min_idx = i
+
+print("Номер максимального элемента: ", max_idx+1)
+print("Номер минимального элемента: ", min_idx+1)
