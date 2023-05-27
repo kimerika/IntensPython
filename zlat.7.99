@@ -1,0 +1,14 @@
+numbers = []
+num = int(input())
+while num != 9999:
+    numbers.append(num)
+    num = int(input())
+
+i = 0
+while i < len(numbers) - 1:
+    if numbers[i] % 2 == 0 and numbers[i+1] % 2 == 0:
+        print("Первая пара четных чисел на местах", i+1, "и", i+2)
+        break
+    i += 1
+else:
+    print("В последовательности нет пар соседних четных чисел")
