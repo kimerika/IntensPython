@@ -1,0 +1,2 @@
+expression = input("Введите арифметическое выражение: ")numbers = list(map(int, expression.split("+"))) #разбиваем строку по "+" и преобразуем каждый элемент в целое число
+result = sum(numbers) #считаем сумму чиселprint(f"Результат вычисления: {result}")
