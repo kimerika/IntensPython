@@ -1,0 +1,11 @@
+n = int(input())
+nums = list(map(int, input().split()))
+
+# Считаем количество чисел, кратных трем
+num_multiples_of_three = sum(1 for num in nums if num % 3 == 0)
+
+# Считаем количество чисел, кратных семи
+num_multiples_of_seven = sum(1 for num in nums if num % 7 == 0)
+
+print("Number of multiples of three:", num_multiples_of_three)
+print("Number of multiples of seven:", num_multiples_of_seven)
