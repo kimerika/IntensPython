@@ -1,0 +1,6 @@
+sentence = "Это предложение для примера" 
+words_array = sentence.split() 
+words_array[0], words_array[-1] = words_array[-1], words_array[0] 
+new_sentence = " ".join(words_array) 
+ 
+print(new_sentence)
