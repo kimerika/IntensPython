@@ -1,0 +1,4 @@
+sentence = "Это предложение из 10 слов" 
+words_array = sentence.split() 
+ 
+print(words_array)
