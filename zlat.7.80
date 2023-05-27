@@ -1,0 +1,51 @@
+games = [] # список игр
+wins = 0 # количество выигрышей
+losses = 0 # количество проигрышей
+draws = 0 # количество ничьих
+
+
+for i in range(20):
+  goals_scored = int(input("Введите количество мячей, забитых командой: ")) # ввод количества забитых мячей
+  goals_conceded = int(input("Введите количество мячей, пропущенных командой: ")) # ввод количества пропущенных мячей
+  game_result = "" # инициализация результата игры
+  
+  if goals_scored > goals_conceded:
+    game_result = "выигрыш" # если забитых мячей больше, чем пропущенных - это выигрыш
+    wins += 1 # увеличиваем количество выигрышей
+  elif goals_scored == goals_conceded:
+    game_result = "ничья" # если числа забитых и пропущенных мячей равны - это ничья
+    draws += 1 # увеличиваем количество ничьих
+  else:
+    game_result = "проигрыш" # если забитых мячей меньше, чем пропущенных - это проигрыш
+    losses += 1 # увеличиваем количество проигрышей
+  
+  games.append([goals_scored, goals_conceded, game_result]) # добавляем результаты игры в список
+  
+print("Результаты игр:")
+for i in range(20):
+  print("Игра", i+1, ":", games[i][2]) # выводим результаты всех игр на экран
+
+print("Количество выигрышей:", wins)
+print("Количество проигрышей:", losses)
+print("Количество ничьих:", draws)
+
+print("Количество выигрышей, проигрышей и ничьих:")
+for i in range(20):
+  if games[i][2] == "выигрыш":
+    wins += 1
+  elif games[i][2] == "проигрыш":
+    losses += 1
+  elif games[i][2] == "ничья":
+    draws += 1
+print(wins,"выигрышей,", losses,"проигрышей,", draws,"ничьих.")
+
+games_with_difference_more_than_3 = 0
+for i in range(20):
+  diff = abs(games[i][0] - games[i][1])
+  if diff >= 3:
+    games_with_difference_more_than_3 += 1
+print("Количество игр с разностью забитых и пропущенных мячей большей или равной трем:", games_with_difference_more_than_3)
+
+
+total_points = wins * 3 + draws # общее количество очков
+print("Общее число очков:", total_points)
