@@ -1,0 +1,9 @@
+heights = [170, 168, 172, 160, 163, 159, 176, 157, 167, 170, 171, 158]
+
+count = 0
+
+for height in heights:
+    if height < 165:
+        count += 1
+        
+print("Количество юношей с ростом менее 165 см:", count)
