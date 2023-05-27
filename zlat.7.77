@@ -1,0 +1,25 @@
+team1_count = 0 # количество удалений первой команды
+team1_time = 0 # общее время удалений первой команды
+team2_count = 0 # количество удалений второй команды
+team2_time = 0 # общее время удалений второй команды
+
+while True:
+    team_number = int(input("Номер команды (1 или 2, 0 - окончание игры): "))
+    if team_number == 0:
+        break
+
+    removal_time = int(input("Время удаления (2, 5 или 10 минут): "))
+    
+    if team_number == 1:
+        team1_count += 1
+        team1_time += removal_time
+    
+    elif team_number == 2:
+        team2_count += 1
+        team2_time += removal_time
+    
+print("Количество удалений первой команды:", team1_count)
+print("Общее время удалений первой команды:", team1_time, "минут")
+
+print("Количество удалений второй команды:", team2_count)
+print("Общее время удалений второй команды:", team2_time, "минут")
