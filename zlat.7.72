@@ -1,0 +1,14 @@
+n = int(input())
+a = list(map(float, input().split()))
+
+num_positives = 0
+num_negatives = 0
+
+for num in a:
+    if num > 0:
+        num_positives += 1
+    elif num < 0:
+        num_negatives += 1
+
+print("Number of positive numbers:", num_positives)
+print("Number of negative numbers:", num_negatives)
