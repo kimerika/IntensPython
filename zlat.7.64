@@ -1,0 +1,13 @@
+birth_years = [1989, 1992, 1985, 1995, 1998, 2005, 1982, 1987, 2003, 1990]
+
+before_1990_count = 0
+after_2000_count = 0
+
+for year in birth_years:
+    if year < 1990:
+        before_1990_count += 1
+    elif year > 2000:
+        after_2000_count += 1
+        
+print("Количество людей, родившихся до 1990 года: ", before_1990_count)
+print("Количество людей, родившихся после 2000 года: ", after_2000_count)
