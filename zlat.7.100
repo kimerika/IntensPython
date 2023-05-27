@@ -1,0 +1,13 @@
+numbers = []
+for i in range(15):
+    num = float(input())
+    numbers.append(num)
+
+i = 1
+while i < 15:
+    if numbers[i] < numbers[i-1]:
+        print("Последовательность не упорядочена, первое нарушение на месте", i+1)
+        break
+    i += 1
+else:
+    print("Последовательность упорядочена по возрастанию")
