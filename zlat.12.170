@@ -1,0 +1,13 @@
+word1 = "процессор" 
+word2 = "информация" 
+ 
+unique_letters = set(word1) ^ set(word2) 
+duplicate_letters = set(word1) & set(word2) 
+ 
+for letter in word1: 
+    if letter in unique_letters or (letter in duplicate_letters and word1.count(letter) == 1): 
+        print(letter, end=" ") 
+ 
+for letter in word2: 
+    if letter in unique_letters or (letter in duplicate_letters and word2.count(letter) == 1): 
+        print(letter, end=" ")
