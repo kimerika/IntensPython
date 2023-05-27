@@ -1,0 +1,38 @@
+word1 = "начало" 
+word2 = "середина" 
+word3 = "конец" 
+ 
+# Вариант 1 - повторяющиеся буквы каждого слова рассматриваются 
+unique_letters = set(word1) ^ set(word2) ^ set(word3) 
+duplicate_letters = set(word1) & set(word2) & set(word3) 
+ 
+for letter in word1: 
+    if letter in unique_letters or (letter in duplicate_letters and word1.count(letter) == 1): 
+        print(letter, end=" ") 
+ 
+for letter in word2: 
+    if letter in unique_letters or (letter in duplicate_letters and word2.count(letter) == 1): 
+        print(letter, end=" ") 
+ 
+for letter in word3: 
+    if letter in unique_letters or (letter in duplicate_letters and word3.count(letter) == 1): 
+        print(letter, end=" ") 
+print() 
+ 
+# Вариант 2 - повторяющиеся буквы каждого слова не рассматриваются 
+unique_word1_letters = set([letter for letter in word1 if word1.count(letter) == 1]) 
+unique_word2_letters = set([letter for letter in word2 if word2.count(letter) == 1]) 
+unique_word3_letters = set([letter for letter in word3 if word3.count(letter) == 1]) 
+unique_letters = unique_word1_letters ^ unique_word2_letters ^ unique_word3_letters 
+ 
+for letter in word1: 
+    if letter in unique_letters: 
+        print(letter, end=" ") 
+ 
+for letter in word2: 
+    if letter in unique_letters: 
+        print(letter, end=" ") 
+ 
+for letter in word3: 
+    if letter in unique_letters: 
+        print(letter, end=" ")
