@@ -1,0 +1,24 @@
+а)  
+sentence = "Слова начинающиеся и заканчивающиеся на одну и ту же букву" 
+ 
+for word in sentence.split(): 
+    if len(word) < 2: 
+        continue 
+    if word[0] == word[-1]: 
+        print(word) 
+ 
+ 
+б) 
+sentence = "Некоторые слова содержат три буквы е" 
+ 
+for word in sentence.split(): 
+    if word.count('е') == 3: 
+        print(word) 
+ 
+ 
+в) 
+sentence = "Некоторые слова содержат букву о" 
+ 
+for word in sentence.split(): 
+    if 'о' in word: 
+        print(word)
