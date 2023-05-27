@@ -1,0 +1,9 @@
+word = input("Введите слово: ") 
+letter_dict = {} #создаем пустой словарь, в котором будем хранить количество каждой буквы в слове 
+for letter in word: 
+    if letter in letter_dict: 
+        letter_dict[letter] += 1 #увеличиваем счетчик буквы, если она уже была в словаре 
+    else: 
+        letter_dict[letter] = 1 #иначе добавляем букву в словарь со значением 1 
+result = [key for key, value in letter_dict.items() if value == 2] #список букв, которые встретились ровно 2 раза 
+print(f"Одинаковые буквы в слове: {result}")
