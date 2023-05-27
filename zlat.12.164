@@ -1,0 +1,11 @@
+sentence = input("Введите предложение: ") 
+max_spaces = 0 
+current_spaces = 0 
+for char in sentence: 
+    if char == " ": 
+        current_spaces += 1 
+    else: 
+        if current_spaces > max_spaces: 
+            max_spaces = current_spaces 
+        current_spaces = 0 
+print(f"Наибольшее количество идущих подряд пробелов: {max_spaces}")
