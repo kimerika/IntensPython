@@ -1,0 +1,21 @@
+1) 
+rainfall = list(map(int, input().split()))
+num_days = 0
+for i in range(len(rainfall)):
+    if rainfall[i] == 0:
+        num_days += 1
+    else:
+        break
+print(num_days)
+2) 
+rainfall = list(map(int, input().split()))
+num_days = 0
+if rainfall[0] == 0:
+    for i in range(len(rainfall)):
+        if rainfall[i] == 0:
+            num_days += 1
+        else:
+            break
+else:
+    num_days = 0
+print(num_days)
