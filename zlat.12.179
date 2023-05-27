@@ -1,0 +1,6 @@
+sentence = "Привет! Как дела? Хорошо, спасибо." 
+words_array = sentence.split() 
+ 
+for word in words_array: 
+    if word.lower() != "привет": 
+        print(word, end=" ")
