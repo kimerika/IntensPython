@@ -1,0 +1,9 @@
+n = int(input())
+triangles_count = 0
+
+for i in range(n):
+    a, b, c = map(int, input().split())
+    if a + b > c:
+        triangles_count += 1
+
+print(triangles_count)
