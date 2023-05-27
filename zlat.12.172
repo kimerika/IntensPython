@@ -1,0 +1,20 @@
+word1 = "процессор" 
+word2 = "сорс" 
+ 
+# Вариант 1 - повторяющиеся буквы второго слова могут в первом слове не повторяться 
+can_be_created = True 
+for letter in set(word2): 
+    if word1.count(letter) < word2.count(letter): 
+        can_be_created = False 
+        break 
+ 
+print("Можно создать второе слово из первого (вариант 1):", can_be_created) 
+ 
+# Вариант 2 - каждая буква второго слова должна входить в первое слово столько же раз, сколько и во второе 
+can_be_created = True 
+for letter in set(word2): 
+    if word1.count(letter) != word2.count(letter): 
+        can_be_created = False 
+        break 
+ 
+print("Можно создать второе слово")
