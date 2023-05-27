@@ -1,0 +1,9 @@
+word1 = "процессор" 
+word2 = "информация" 
+word3 = "соревнование" 
+ 
+unique_letters = set(word1) | set(word2) | set(word3) 
+ 
+for letter in unique_letters: 
+    if word1.count(letter) <= 1 and word2.count(letter) <= 1 and word3.count(letter) <= 1: 
+        print(letter, end=" ")
