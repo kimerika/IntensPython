@@ -1,0 +1,8 @@
+grades = []
+num_two = 0
+for i in range(n):
+    grade1, grade2 = map(int, input().split())
+    grades.append((grade1, grade2))
+    if grade1 == 2 or grade2 == 2:
+        num_two += 1
+print(num_two)
