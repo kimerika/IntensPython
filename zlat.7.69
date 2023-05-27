@@ -1,0 +1,6 @@
+1) grades = list(map(int, input().split()))
+print(grades.count(5))
+
+2)  grades = list(map(int, input().split()))
+num_fives = grades.count(5)
+print(num_fives if num_fives < 20 else num_fives - 20)
