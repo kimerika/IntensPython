@@ -1,0 +1,30 @@
+# определяем словарь с данными о сотрудниках компании
+employees = {
+    "Иванов": True,
+    "Петров": False,
+    "Сидоров": True,
+    "Соколов": False,
+    "Кузнецов": False,
+    "Михайлов": False,
+    "Новиков": True,
+    "Федоров": True,
+    "Морозов": False,
+    "Григорьев": True,
+    "Орлов": True,
+    "Волков": False,
+    "Зайцев": False,
+    "Павлов": False,
+    "Семенов": True,
+    "Голубев": True
+}
+
+# находим фамилии военнообязанных
+military_employees = []
+for employee, military_service in employees.items():
+    if military_service:
+        military_employees.append(employee)
+
+# выводим список военнообязанных
+print("Военнообязанные сотрудники:")
+for employee in military_employees:
+    print(employee)
