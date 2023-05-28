@@ -1,0 +1,47 @@
+baggage = [
+    {"passenger": 1, "num_items": 3, "total_weight": 50},
+    {"passenger": 2, "num_items": 2, "total_weight": 30},
+    {"passenger": 3, "num_items": 1, "total_weight": 20},
+    {"passenger": 4, "num_items": 4, "total_weight": 60},
+    # Здесь должны быть описаны багажи оставшихся 20 пассажиров
+]
+
+more_than_two_items = 0 # счётчик для пункта а)
+one_item_lighter_than_25kg = False # флаг для пункта б)
+total_items = 0 # сумма числа вещей для пункта в)
+for passenger in baggage:
+    # пункт а)
+    if passenger["num_items"] > 2:
+        more_than_two_items += 1
+    
+    # пункт б)
+    if passenger["num_items"] == 1 and passenger["total_weight"] < 25:
+        one_item_lighter_than_25kg = True
+        
+    # пункт в)
+    total_items += passenger["num_items"]
+average_items = total_items / len(baggage)
+over_average_items = 0 # счётчик для пункта в)
+for passenger in baggage:
+    if passenger["num_items"] > average_items:
+        over_average_items += 1
+
+# пункт г)
+def calc_average_weight(bag):
+
+    return bag["total_weight"] / bag["num_items"]
+
+average_weight = sum(calc_average_weight(bag) for bag in baggage) / len(baggage) # вычисляем общее среднее
+for i, passenger in enumerate(baggage):
+    bag_average_weight = calc_average_weight(passenger)
+    if abs(bag_average_weight - average_weight) <= 0.5:
+        print(f"Номер багажа: {i+1}")
+        break
+
+# вывод результатов выполнения на экран
+print(f"Число пассажиров, имеющих более двух вещей: {more_than_two_items}")
+if one_item_lighter_than_25kg:
+    print("Имеется хотя бы один пассажир, багаж которого состоит из одной вещи весом менее 25 кг")
+else:
+    print("Нет пассажиров, багаж которых состоит из одной вещи весом менее 25 кг")
+print(f"Число пассажиров, количество вещей которых превосходит среднее число вещей всех пассажиров: {over_average_items}")
