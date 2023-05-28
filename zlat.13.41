@@ -1,0 +1,76 @@
+results = [
+    {"scored": 2, "conceded": 1},
+    {"scored": 0, "conceded": 2},
+    {"scored": 3, "conceded": 3},
+    {"scored": 1, "conceded": 0},
+    {"scored": 0, "conceded": 1},
+    {"scored": 1, "conceded": 3},
+    {"scored": 2, "conceded": 2},
+    {"scored": 1, "conceded": 1},
+    {"scored": 0, "conceded": 0},
+    {"scored": 3, "conceded": 1},
+    {"scored": 1, "conceded": 2},
+    {"scored": 2, "conceded": 0},
+    {"scored": 4, "conceded": 1},
+    {"scored": 1, "conceded": 3},
+    {"scored": 2, "conceded": 0},
+    {"scored": 0, "conceded": 2},
+    {"scored": 1, "conceded": 0},
+    {"scored": 2, "conceded": 1},
+    {"scored": 1, "conceded": 0},
+    {"scored": 1, "conceded": 1},
+    {"scored": 1, "conceded": 4},
+    {"scored": 0, "conceded": 2},
+    {"scored": 1, "conceded": 2}
+    ]
+
+# пункт а)
+for i, game in enumerate(results):
+    if game["scored"] > game["conceded"]:
+        print(f"В игре {i+1} команда выиграла")
+    elif game["scored"] == game["conceded"]:
+        print(f"В игре {i+1} команды сыграли вничью")
+    else:
+        print(f"В игре {i+1} команда проиграла")
+
+# пункт б)
+wins = 0
+for game in results:
+    if game["scored"] > game["conceded"]:
+        wins += 1
+print(f"Общее количество выигрышей: {wins}")
+
+# пункт в)
+wins = 0
+losses = 0
+for game in results:
+    if game["scored"] > game["conceded"]:
+        wins += 1
+    elif game["scored"] < game["conceded"]:
+        losses += 1
+print(f"Количество выигрышей: {wins}")
+print(f"Количество проигрышей: {losses}")
+
+# пункт г)
+wins = 0
+draws = 0
+losses = 0
+for game in results:
+    if game["scored"] > game["conceded"]:
+        wins += 1
+    elif game["scored"] == game["conceded"]:
+        draws += 1
+    else:
+        losses += 1
+print(f"Количество выигрышей: {wins}")
+print(f"Количество ничьих: {draws}")
+print(f"Количество проигрышей: {losses}")
+
+# пункт д)
+points = 0
+for game in results:
+    if game["scored"] > game["conceded"]:
+        points += 3
+    elif game["scored"] == game["conceded"]:
+        points += 1
+print(f"Количество набранных очков: {points}")
