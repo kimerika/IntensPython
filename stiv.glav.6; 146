@@ -1,0 +1,18 @@
+def is_anagram(phrase1, phrase2):
+    # приводим все символы к нижнему регистру и убираем знаки препинания и пробелы
+    phrase1 = "".join(filter(str.isalnum, phrase1.lower()))
+    phrase2 = "".join(filter(str.isalnum, phrase2.lower()))
+    
+    # сортируем символы в обеих фразах
+    sorted_phrase1 = sorted(phrase1)
+    sorted_phrase2 = sorted(phrase2)
+    
+    # сравниваем отсортированные фразы
+    return sorted_phrase1 == sorted_phrase2
+    
+phrase1 = "William Shakespeare"
+phrase2 = "I am a weakish speller"
+if is_anagram(phrase1, phrase2):
+    print("Эти фразы являются полными анаграммами.")
+else:
+    print("Эти фразы не являются полными анаграммами.")
