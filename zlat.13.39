@@ -1,0 +1,20 @@
+import datetime
+
+trains = [
+    {"number": 1, "destination": "Москва-Омск", "arrival": {"hour": 8, "minute": 30}, "departure": {"hour": 9, "minute": 0}},
+    {"number": 2, "destination": "Омск-Москва", "arrival": {"hour": 10, "minute": 15}, "departure": {"hour": 11, "minute": 0}},
+    {"number": 3, "destination": "Москва-Красноярск", "arrival": {"hour": 12, "minute": 0}, "departure": {"hour": 12, "minute": 30}},
+    # Здесь должны быть описаны ещё 22 поезда
+]
+
+now = datetime.datetime.now().time() # Получаем текущее время
+
+for train in trains:
+    if (train["arrival"]["hour"] < now.hour) or \
+       (train["arrival"]["hour"] == now.hour and train["arrival"]["minute"] <= now.minute):
+        # Поезд уже прибыл
+        print(f"Поезд {train['number']}, {train['destination']} уже прибыл на станцию")
+    elif (train["departure"]["hour"] > now.hour) or \
+         (train["departure"]["hour"] == now.hour and train["departure"]["minute"] > now.minute):
+        # Поезд ещё не ушёл
+        print(f"Поезд {train['number']}, {train['destination']} стоит на станции и готовится к отправлению")
