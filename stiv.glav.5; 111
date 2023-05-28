@@ -1,0 +1,15 @@
+# Просим пользователя ввести числа и сохраняем их в список
+numbers = []
+while True:
+    num = int(input('Введите число (0 для окончания ввода): '))
+    if num == 0:
+        break
+    numbers.append(num)
+
+# Сортируем список в порядке убывания
+numbers.sort(reverse=True)
+
+# Выводим числа на экран, кроме нуля
+for num in numbers:
+    if num != 0:
+        print(num)
