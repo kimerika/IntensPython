@@ -1,0 +1,18 @@
+text = input("Введите текст со скобками: ") 
+ 
+stack = [] 
+for i, symbol in enumerate(text): 
+    if symbol == "(": 
+        stack.append(i) 
+    elif symbol == ")": 
+        if not stack: 
+            print("нет") 
+            print(f"Лишняя закрывающая скобка на позиции {i}") 
+            break 
+        else: 
+            stack.pop() 
+if stack: 
+    print("нет") 
+    print(f"Отсутствует {len(stack)} закрывающих скобок") 
+else: 
+    print("да")
