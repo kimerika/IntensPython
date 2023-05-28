@@ -1,0 +1,6 @@
+sentence = "Найдите слово, начинающееся на букву к" 
+ 
+for word in sentence.split(): 
+    if word.startswith('к'): 
+        print(word) 
+        break
