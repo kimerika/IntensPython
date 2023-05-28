@@ -1,0 +1,21 @@
+def eratosthenes(n):
+    """
+    Реализация алгоритма решета Эратосфена для поиска всех простых чисел в интервале от 2 до n.
+
+    :param n: верхняя граница интервала
+    :return: список простых чисел в интервале от 2 до n
+    """
+    primes = [True] * (n + 1)
+    primes[0] = primes[1] = False
+    p = 2
+    while p * p <= n:
+        if primes[p]:
+            for i in range(p * p, n + 1, p):
+                primes[i] = False
+        p += 1
+    return [i for i in range(2, n + 1) if primes[i]]
+
+
+# Пример использования
+n = int(input("Введите верхнюю границу интервала для поиска простых чисел: "))
+print("Простые числа в интервале от 2 до", n, ":", eratosthenes(n))
