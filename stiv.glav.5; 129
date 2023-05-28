@@ -1,0 +1,22 @@
+def tokenize(expression):
+    operators = ['+', '-', '*', '/', '^', '(', ')']
+    tokens = []
+    num_start = None
+    for i, char in enumerate(expression):
+        if char.isdigit():
+            if num_start is None:
+              num_start = i
+        elif num_start is not None:
+            tokens.append(int(expression[num_start:i]))
+            num_start = None
+        
+        if char in operators:
+            tokens.append(char)
+    if num_start is not None:
+        tokens.append(int(expression[num_start:]))
+
+    return tokens
+
+expression = input("Введите математическое выражение: ")
+tokens = tokenize(expression)
+print(tokens)
