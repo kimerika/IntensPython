@@ -1,0 +1,78 @@
+class Country:
+    def __init__(self, name, capital, region, population, area):
+        self.name = name
+        self.capital = capital
+        self.region = region
+        self.population = population
+        self.area = area
+
+countries = [
+    Country('Россия', 'Москва', 'Европа', 144.5, 17_098.2),
+    Country('Испания', 'Мадрид', 'Европа', 47.43, 505.9),
+    Country('Индия', 'Нью-Дели', 'Азия', 1366.42, 3287.59),
+    Country('Китай', 'Пекин', 'Азия', 1393.58, 9596.96),
+    ...
+]
+
+# 1. Определение столицы по названию государства
+def find_capital_by_country_name(name):
+    for country in countries:
+        if country.name == name:
+            return country.capital
+    return None
+
+# 2. Определение названия государства по городу-столице
+def find_country_name_by_capital(capital):
+    for country in countries:
+        if country.capital == capital:
+            return country.name
+    return None
+
+# 3. Вывод всей информации о заданном государстве
+def print_country_info(name):
+    for country in countries:
+        if country.name == name:
+            print(f'Название: {country.name}')
+            print(f'Столица: {country.capital}')
+            print(f'Часть света: {country.region}')
+            print(f'Численность населения: {country.population} млн чел.')
+            print(f'Площадь территории: {country.area} тыс. кв. км.')
+            return
+    print('Государство не найдено')
+
+# 4. Вывод названий всех стран, расположенных в заданной части света
+def list_countries_by_region(region):
+    for country in countries:
+        if country.region == region:
+            print(country.name)
+
+# 5. Расчет плотности населения для каждого государства
+def calculate_population_density():
+    for country in countries:
+        density = country.population / country.area
+        print(f'{country.name}: {density} тыс. чел./кв. км.')
+
+# 6. Определение количества государств, расположенных в заданной части света
+def count_countries_in_region(region):
+    count = 0
+    for country in countries:
+        if country.region == region:
+            count += 1
+    print(f'Количество государств в регионе {region}: {count}')
+
+# 7. Расчет общей площади государств, расположенных в заданной части света
+def calculate_total_area_in_region(region):
+    total_area = 0
+    for country in countries:
+        if country.region == region:
+            total_area += country.area
+    print(f'Общая площадь государств в регионе {region}: {total_area} тыс. кв. км.')
+
+# Пример использования
+print(find_capital_by_country_name('Китай'))  # Пекин
+print(find_country_name_by_capital('Москва'))  # Россия
+print_country_info('Испания')
+list_countries_by_region('Азия')
+calculate_population_density()
+count_countries_in_region('Азия')
+calculate_total_area_in_region('Европа')
