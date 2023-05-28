@@ -1,0 +1,20 @@
+def reverseLookup(dictionary, value):
+    """
+    Функция, осуществляющая поиск всех ключей в словаре по заданному значению.
+
+    :param dictionary: заданный словарь
+    :param value: значение, для которого осуществляется поиск
+    :return: список ключей из словаря, соответствующих переданному значению
+    """
+    keys = []
+    for key in dictionary:
+        if dictionary[key] == value:
+            keys.append(key)
+    return keys
+
+
+# Пример использования
+my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 2, 'e': 1}
+print(reverseLookup(my_dict, 1))    # ['a', 'e']
+print(reverseLookup(my_dict, 2))    # ['b', 'd']
+print(reverseLookup(my_dict, 4))    # [] (пустой список при отсутствии ключей для искомого значения)
