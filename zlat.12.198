@@ -1,0 +1,16 @@
+def insert_spaces(text, length): 
+    words = text.split() 
+    diff = length - len(text) 
+    spaces = [' ']*(len(words)-1) 
+    while diff > 0: 
+        for i in range(len(spaces)): 
+            if diff < 1: 
+                break 
+            spaces[i] += ' ' 
+            diff -= 1 
+    return ''.join([w+s for w,s in zip(words,spaces+[str()])]) 
+ 
+text = "Это пример текста, который нужно изменить" 
+length = 50 
+new_text = insert_spaces(text, length) 
+print(new_text)
