@@ -1,0 +1,26 @@
+import math
+
+def triangle_area(a, b, c):
+    """Функция вычисляет площадь треугольника по его сторонам"""
+    p = (a + b + c) / 2
+    area = math.sqrt(p * (p - a) * (p - b) * (p - c))
+    return area
+
+def triangle_perimeter(a, b, c):
+    """Функция вычисляет периметр треугольника по его сторонам"""
+    perimeter = a + b + c
+    return perimeter
+
+a1 = float(input("Введите длину стороны a1 первого треугольника: ")) 
+b1 = float(input("Введите длину стороны b1 первого треугольника: ")) 
+c1 = float(input("Введите длину стороны c1 первого треугольника: ")) 
+
+a2 = float(input("Введите длину стороны a2 второго треугольника: ")) 
+b2 = float(input("Введите длину стороны b2 второго треугольника: ")) 
+c2 = float(input("Введите длину стороны c2 второго треугольника: ")) 
+
+perimeter_sum = triangle_perimeter(a1, b1, c1) + triangle_perimeter(a2, b2, c2)
+area_sum = triangle_area(a1, b1, c1) + triangle_area(a2, b2, c2)
+
+print("Сумма периметров двух треугольников равна:", perimeter_sum)
+print("Сумма площадей двух треугольников равна:", area_sum)
