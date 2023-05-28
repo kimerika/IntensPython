@@ -1,0 +1,66 @@
+def num_to_words(num, is_main=True): 
+    ones = { 
+        0: "ноль", 1: "один", 2: "два", 3: "три", 4: "четыре", 
+        5: "пять", 6: "шесть", 7: "семь", 8: "восемь", 9: "девять" 
+    } 
+    teens = { 
+        11: "одиннадцать", 12: "двенадцать", 13: "тринадцать", 
+        14: "четырнадцать", 15: "пятнадцать", 16: "шестнадцать", 
+        17: "семнадцать", 18: "восемнадцать", 19: "девятнадцать" 
+    } 
+    tens = { 
+        10: "десять", 20: "двадцать", 30: "тридцать", 
+        40: "сорок", 50: "пятьдесят", 60: "шестьдесят", 
+        70: "семьдесят", 80: "восемьдесят", 90: "девяносто" 
+    } 
+    hundreds = { 
+        100: "сто", 200: "двести", 300: "триста", 
+        400: "четыреста", 500: "пятьсот", 600: "шестьсот", 
+        700: "семьсот", 800: "восемьсот", 900: "девятьсот" 
+    } 
+    thousands = { 
+        1: "тысяча", 2: "тысячи", 3: "тысяч" 
+    } 
+ 
+    if num < 10: 
+        return ones[num] 
+    elif num <= 19: 
+        return teens[num] 
+    elif num < 100: 
+        tens_key = (num // 10) * 10 
+        ones_key = num % 10 
+        if ones_key == 0: 
+            return tens[tens_key] 
+        else: 
+            return tens[tens_key] + " " + ones[ones_key] 
+    elif num < 1000: 
+        hundreds_key = (num // 100) * 100 
+        tens_key = (num % 100) // 10 * 10 
+        ones_key = num % 10 
+        if tens_key == 10: 
+            return hundreds[hundreds_key] + " " + teens[num % 100] 
+        elif ones_key == 0 and tens_key == 0: 
+            return hundreds[hundreds_key] 
+        elif ones_key == 0: 
+            return hundreds[hundreds_key] + " " + tens[tens_key] 
+        elif tens_key == 0: 
+            return hundreds[hundreds_key] + " " + ones[ones_key] 
+        else: 
+            return hundreds[hundreds_key] + " " + tens[tens_key] + " " + ones[ones_key] 
+    else: 
+        n = 0 
+        while num >= 1000: 
+            num = num // 1000 
+            n += 1 
+        thousands_key = 2 if n > 4 else n if n == 1 else 0 
+        thousands_str = thousands[thousands_key] 
+        if thousands_key == 0: 
+            return num_to_words(num, False) 
+        else: 
+            if is_main and num_to_words(num, False) == "один": 
+                thousands_str = thousands_str[:-1] 
+            return num_to_words(num, False) + " " + thousands_str + " " + num_to_words((num % 1000), False) 
+ 
+# пример использования: 
+num = 123456 
+print(num_to_words(num))
