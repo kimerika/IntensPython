@@ -1,0 +1,10 @@
+sentence = "Найдите длину самого короткого слова в предложении" 
+ 
+words = sentence.split() 
+shortest_word_length = len(words[0]) 
+ 
+for word in words: 
+    if len(word) < shortest_word_length: 
+        shortest_word_length = len(word) 
+ 
+print(shortest_word_length)
