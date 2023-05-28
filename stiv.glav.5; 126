@@ -1,0 +1,46 @@
+import random
+
+# функция для создания колоды из 52 карт
+def create_deck():
+    suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+    ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
+    deck = []
+
+    for suit in suits:
+        for rank in ranks:
+            card = rank + ' of ' + suit
+            deck.append(card)
+
+    return deck
+
+# функция для тасования колоды
+def shuffle_deck(deck):
+    random.shuffle(deck)
+    return deck
+
+# функция для раздачи карт
+def deal(num_players, num_cards, deck):
+    hands = []
+
+    for player in range(num_players):
+        hand = []
+        for card in range(num_cards):
+            deal_card = deck.pop(0)
+            hand.append(deal_card)
+        hands.append(hand)
+
+    return hands
+
+# создаем и перемешиваем колоду
+deck = create_deck()
+shuffled_deck = shuffle_deck(deck)
+
+# раздаем карты 4 игрокам по 5 карт каждому
+hands = deal(4, 5, shuffled_deck)
+
+# выводим руки каждого игрока
+for i in range(len(hands)):
+    print(f"Player {i+1} hand: {hands[i]}")
+
+# выводим оставшиеся карты в колоде
+print(f"\nRemaining cards in deck: {shuffled_deck}")
