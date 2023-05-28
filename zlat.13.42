@@ -1,0 +1,28 @@
+# данные о росте учеников
+heights = [155, 158, 160, 163, 166, 168, 170, 173, 175, 177, 180, 182, 185, 187, 190]
+
+# рост нового ученика
+new_height = 172
+
+# а) вывод фамилий учеников, рост которых меньше роста нового ученика
+for i in range(len(heights)):
+    if heights[i] < new_height:
+        print("Ученик ", i+1, ":", "Рост - ", heights[i])
+
+# б) определение фамилии ученика, после которого следует записать фамилию нового ученика
+for i in range(len(heights)):
+    if heights[i] < new_height:
+        continue
+    else:
+        print("Фамилию новенького следует записать после ученика ", i+1)
+        break
+
+# в) определение фамилии ученика, чей рост меньше всего отличается от роста нового ученика
+closest_height = abs(heights[0] - new_height)
+for i in range(1, len(heights)):
+    if abs(heights[i] - new_height) < closest_height:
+        closest_height = abs(heights[i] - new_height)
+
+for i in range(len(heights)):
+    if abs(heights[i] - new_height) == closest_height:
+        print("Фамилия ученика, рост которого меньше всего отличается от роста новенького:", i+1)
