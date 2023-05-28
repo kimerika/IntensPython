@@ -1,0 +1,23 @@
+def exclude_extremes(lst, n):
+    if len(lst) < 4:
+        print('Ошибка: список должен содержать не менее 4 элементов')
+        return lst
+    sorted_lst = sorted(lst)
+    return sorted_lst[n:-n]
+
+# Запрашиваем у пользователя целые числа и сохраняем их в список
+numbers = []
+while True:
+    num_str = input('Введите целое число (Enter для завершения ввода): ')
+    if num_str == '':
+        break
+    try:
+        num = int(num_str)
+        numbers.append(num)
+    except ValueError:
+        print('Ошибка: введите целое число')
+
+# Вызываем функцию exclude_extremes и выводим измененный и оригинальный список на экран
+new_numbers = exclude_extremes(numbers, 1)
+print('Исходный список:', numbers)
+print('Измененный список:', new_numbers)
