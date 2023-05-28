@@ -1,0 +1,19 @@
+def find_unary_operators(tokens):
+    unary_ops = {'+': 'u+', '-': 'u-'}
+    result = []
+    for i, token in enumerate(tokens):
+        if token in {'+', '-'}:
+            if i == 0 or isinstance(tokens[i-1], str) and tokens[i-1] in {'+', '-', '*', '/', '^', '('}:
+                result.append(unary_ops[token])
+            else:
+                result.append(token)
+        else:
+            result.append(token)
+    return result
+
+expression = input("Введите математическое выражение: ")
+tokens = tokenize(expression)
+unary_operators = [token for token in tokens if token in {'+', '-'}]
+updated_tokens = find_unary_operators(tokens)
+print("Унарные операторы:", unary_operators)
+print("Обновленные лексемы:", updated_tokens)
