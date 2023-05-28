@@ -1,0 +1,27 @@
+negative_numbers = []
+zero_numbers = []
+positive_numbers = []
+
+while True:
+    number = input("Введите целое число: ")
+    
+    if number == "":
+        break
+    
+    number = int(number)
+    
+    if number < 0:
+        negative_numbers.append(number)
+    elif number == 0:
+        zero_numbers.append(number)
+    else:
+        positive_numbers.append(number)
+        
+for number in negative_numbers:
+    print(number)
+    
+for number in zero_numbers:
+    print(number)
+    
+for number in positive_numbers:
+    print(number)
