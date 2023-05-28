@@ -1,0 +1,15 @@
+pointheights = [160, 168, 165, 159, 153, 163, 169, 173, 170, 162, 
+           157, 151, 156, 172, 166, 174, 164, 152, 155, 176,
+           177, 154, 171, 158, 150]
+names = ["Ivanov", "Petrov", "Sidorov", "Kuznetsov", "Popov",
+         "Semenov", "Orlov", "Novikov", "Fedorov", "Morozov",
+         "Antonov", "Lebedev", "Savelyev", "Markov", "Makarov",
+         "Kiselev", "Dmitriev", "Stepanov", "Frolov", "Golubev",
+         "Kolesnikov", "Vinogradov", "Belyaev", "Danilov", "Melnikov"]
+
+heights_and_names = list(zip(heights, names))
+heights_and_names.sort()
+
+print("Фамилии учеников в порядке возрастания роста:")
+for height, name in heights_and_names:
+    print(name)
