@@ -1,0 +1,14 @@
+sentence1 = input("Введите первое предложение: ") 
+sentence2 = input("Введите второе предложение: ") 
+ 
+words1 = sentence1.split() 
+words2 = sentence2.split() 
+ 
+unique_words = set(words1).symmetric_difference(set(words2)) 
+words1_count = {word1: words1.count(word1) for word1 in unique_words} 
+words2_count = {word2: words2.count(word2) for word2 in unique_words} 
+ 
+print("Слова, которые встречаются в двух предложениях только один раз:") 
+for word, count in words1_count.items(): 
+    if count == 1 and words2_count[word] == 1: 
+        print(word)
