@@ -1,0 +1,24 @@
+from datetime import datetime
+
+employees = [
+    {"surname": "Иванов", "name": "Иван", "patronymic": "Петрович", "address": "ул. Пушкина, д.10", "start_date": "01-2019"},
+    {"surname": "Сидоров", "name": "Петр", "patronymic": "Сергеевич", "address": "ул. Лермонтова, д.5", "start_date": "09-2018"},
+    {"surname": "Петров", "name": "Сергей", "patronymic": "Владимирович", "address": "ул. Толстого, д.8", "start_date": "11-2016"},
+    {"surname": "Кузнецов", "name": "Алексей", "patronymic": "Михайлович", "address": "ул. Гоголя, д.15", "start_date": "03-2019"},
+    {"surname": "Соловьев", "name": "Дмитрий", "patronymic": "Александрович", "address": "ул. Пушкина, д.7", "start_date": "06-2017"},
+    {"surname": "Федоров", "name": "Николай", "patronymic": "Иванович", "address": "ул. Пушкина, д.12", "start_date": "12-2015"},
+    {"surname": "Михайлов", "name": "Василий", "patronymic": "Петрович", "address": "ул. Лермонтова, д.3", "start_date": "04-2018"},
+    {"surname": "Васильев", "name": "Андрей", "patronymic": "Дмитриевич", "address": "ул. Гоголя, д.14", "start_date": "07-2017"},
+    # Дополнительно можно добавить данные о других сотрудниках
+]
+
+today = datetime.today()
+min_work_period = 3  # количество лет для определения опыта работы
+
+for employee in employees:
+    # преобразуем дату поступления на работу в datetime-формат
+    start_date = datetime.strptime(employee["start_date"], "%m-%Y")
+    # вычисляем разницу между текущей датой и датой поступления на работу в годах
+    work_period = today.year - start_date.year - ((today.month, today.day) < (start_date.month, start_date.day))
+    if work_period >= min_work_period:
+        print("{}, {}, {}, {}".format(employee["surname"], employee["name"], employee["patronymic"], employee["address"]))
