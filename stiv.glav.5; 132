@@ -1,0 +1,22 @@
+OPERATORS = {'+': lambda x, y: x + y, '-': lambda x, y: x - y, '*': lambda x, y: x * y, '/': lambda x, y: x / y, '^': lambda x, y: x ** y}
+
+def evaluate_postfix(postfix):
+    values = []
+    for token in postfix:
+        if token.isdigit():
+            values.append(int(token))
+        elif token == '-':
+            operand = values.pop()
+            values.append(-operand)
+        elif token in OPERATORS:
+            right = values.pop()
+            left = values.pop()
+            result = OPERATORS[token](left, right)
+            values.append(result)
+    return values[0]
+
+infix_expression = input("Введите инфиксное выражение: ")
+postfix_expression = infix_to_postfix(infix_expression)
+print("Постфиксное выражение:", " ".join(postfix_expression))
+result = evaluate_postfix(postfix_expression)
+print("Результат:", result)
