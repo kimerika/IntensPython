@@ -1,0 +1,26 @@
+def num_to_word(num):
+    ones_dict = {'0': '', '1': 'one', '2': 'two', '3': 'three', '4': 'four', '5': 'five', '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine'}
+    tens_dict = {'10': 'ten', '11': 'eleven', '12': 'twelve', '13': 'thirteen', '14': 'fourteen', '15': 'fifteen', '16': 'sixteen', '17': 'seventeen', '18': 'eighteen', '19': 'nineteen', '2': 'twenty', '3': 'thirty', '4': 'forty', '5': 'fifty', '6': 'sixty', '7': 'seventy', '8': 'eighty', '9': 'ninety'}
+    num_str = str(num)
+    word = ''
+    if num == 0:
+        word = 'zero'
+    elif num < 10:
+        word = ones_dict[num_str]
+    elif num < 20:
+        word = tens_dict[num_str]
+    elif num < 100:
+        if num_str[1] == '0':
+            word = tens_dict[num_str[0]]
+        else:
+            word = tens_dict[num_str[0]] + ' ' + ones_dict[num_str[1]]
+    elif num < 1000:
+        word = ones_dict[num_str[0]] + ' hundred'
+        if int(num_str[1:]) != 0:
+            word += ' ' + num_to_word(int(num_str[1:]))
+    else:
+        word = 'Число за пределами диапазона.'
+    return word
+
+num = int(input('Введите число от 0 до 999: '))
+print(num_to_word(num))
