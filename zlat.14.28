@@ -1,0 +1,46 @@
+def sum_of_digits(n):
+    """Функция для расчета суммы цифр трехзначного числа"""
+    s = 0
+    while n > 0:
+        s += n % 10
+        n //= 10
+    return s
+
+count = 0
+
+for i in range(100000, 1000000):
+    first_half = i // 1000
+    second_half = i % 1000
+    if sum_of_digits(first_half) == sum_of_digits(second_half):
+        count += 1
+
+print(f'Количество "счастливых" чисел: {count}') 
+
+
+Второй вариант программы:
+def sum_of_digits(n):
+    """Функция для расчета суммы цифр трехзначного числа"""
+    s = 0
+    while n > 0:
+        s += n % 10
+        n //= 10
+    return s
+
+
+def is_happy_number(n):
+    """Функция для проверки, является ли шестизначное число "счастливым" """
+    first_half = n // 1000
+    second_half = n % 1000
+    if sum_of_digits(first_half) == sum_of_digits(second_half):
+        return True
+    else:
+        return False
+
+
+count = 0
+
+for i in range(100000, 1000000):
+    if is_happy_number(i):
+        count += 1
+
+print(f'Количество "счастливых" чисел: {count}')
