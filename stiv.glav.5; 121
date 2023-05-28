@@ -1,0 +1,15 @@
+import random
+
+# Создаем список чисел от 1 до 49
+numbers = list(range(1, 50))
+
+# Случайным образом выбираем шесть чисел из списка без повторений
+selected_numbers = random.sample(numbers, k=6)
+
+# Сортируем выбранные номера по возрастанию
+selected_numbers.sort()
+
+# Выводим выбранные номера на экран
+print("Выигрышные номера:")
+for number in selected_numbers:
+    print(number)
