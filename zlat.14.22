@@ -1,0 +1,13 @@
+def is_power_of_five(num):
+    # Функция, определяющая, является ли число степенью пяти
+    while num % 5 == 0:
+        num //= 5
+    return num == 1
+
+p = 10
+a = [1, 5, 25, 30, 125, 130, 625, 640, 3125, 3150]
+
+# Используем list comprehension для создания списка всех степеней пятерки из последовательности
+power_of_five = [num for num in a if is_power_of_five(num) and num <= p]
+
+print("Количество чисел, являющихся степенями пятерки:", len(power_of_five))
