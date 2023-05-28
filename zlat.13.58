@@ -1,0 +1,8 @@
+students = {"1а": 25, "16": 20, "26": 30, "6а": 27} # и так далее для других классов
+
+class_name = input("Введите название класса: ")
+
+if class_name in students:
+    print(f"Численность учащихся в классе {class_name}: {students[class_name]}")
+else:
+    print(f"Класс {class_name} не найден.")
