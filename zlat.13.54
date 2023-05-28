@@ -1,0 +1,10 @@
+elements = {"медь": "Си", "кислород": "О"} # и так далее для других элементов
+
+element_symbol = "Си" # пример заданного обозначения элемента
+
+for element_name, symbol in elements.items():
+    if symbol == element_symbol:
+        print(f"Название для обозначения элемента {element_symbol}: {element_name}")
+        break
+else:
+    print(f"Нет такого обозначения в словаре.")
