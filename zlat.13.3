@@ -1,0 +1,40 @@
+# определяем словарь с городами и странами
+cities = {
+    'Moscow': 'Russia',
+    'Berlin': 'Germany',
+    'Rome': 'Italy',
+    'Barcelona': 'Spain',
+    'Paris': 'France',
+    'Amsterdam': 'Netherlands',
+    'Vienna': 'Austria',
+    'Brussels': 'Belgium',
+    'Copenhagen': 'Denmark',
+    'Oslo': 'Norway',
+    'Helsinki': 'Finland',
+    'Stockholm': 'Sweden',
+    'Athens': 'Greece',
+    'Dublin': 'Ireland',
+    'Lisbon': 'Portugal',
+    'Prague': 'Czech Republic',
+    'Warsaw': 'Poland',
+    'Bratislava': 'Slovakia',
+    'Budapest': 'Hungary',
+    'Zurich': 'Switzerland',
+    'Kiev': 'Ukraine',
+    'Minsk': 'Belarus',
+    'Sofia': 'Bulgaria',
+    'Tbilisi': 'Georgia',
+    'Baku': 'Azerbaijan',
+    'Yerevan': 'Armenia'
+}
+
+# находим все города, находящиеся в Италии
+italian_cities = []
+for city, country in cities.items():
+    if country == 'Italy':
+        italian_cities.append(city)
+
+# выводим список итальянских городов
+print("Итальянские города:")
+for city in italian_cities:
+    print(city)
