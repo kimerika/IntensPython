@@ -1,0 +1,19 @@
+text = "Lorem 123 ipsum dolor sit amet, 456 consectetur adipiscing elit, sed do eiusmod 555 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 789 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+
+# создаем словарь с информацией о количестве вхождений для каждой цифры в тексте
+digit_counts = {}
+for char in text:
+    if char.isdigit():
+        if char in digit_counts:
+            digit_counts[char] += 1
+        else:
+            digit_counts[char] = 1
+
+# выводим словарь с информацией о частоте вхождения цифр в тексте
+print("Частота вхождения каждой из цифр в тексте:")
+for digit in range(10):
+    digit_str = str(digit)
+    if digit_str in digit_counts:
+        print(f"{digit_str}: {digit_counts[digit_str]}")
+    else:
+        print(f"{digit_str}: 0")
