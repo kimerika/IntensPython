@@ -1,0 +1,12 @@
+import string
+
+def extract_words(sentence):
+    for char in string.punctuation:
+        sentence = sentence.replace(char, " ")
+    words = sentence.split()
+    return words
+
+if name == "main":
+    user_input = input("Введите строку: ")
+    words = extract_words(user_input)
+    print(words)
