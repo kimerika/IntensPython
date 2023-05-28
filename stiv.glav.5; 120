@@ -1,0 +1,27 @@
+def format_list(lst):
+    # Если список пуст, возвращаем пустую строку
+    if not lst:
+        return ""
+    # Преобразуем все элементы списка в строки
+    lst = [str(item) for item in lst]
+    # Если в списке только один элемент, возвращаем его как строку
+    if len(lst) == 1:
+        return lst[0]
+    # Если в списке два элемента, возвращаем их, разделенные союзом "и"
+    elif len(lst) == 2:
+        return f"{lst[0]} и {lst[1]}"
+    # Если в списке больше двух элементов, добавляем запятые и союз "и" перед последним элементом
+    else:
+        return f"{', '.join(lst[:-1])} и {lst[-1]}"
+
+# Запрашиваем у пользователя несколько элементов списка
+elements = []
+while True:
+    element = input("Введите элемент списка (пустая строка для завершения ввода): ")
+    if not element:
+        break
+    elements.append(element)
+
+# Форматируем элементы в строку
+formatted_string = format_list(elements)
+print(f"Ваш список: {formatted_string}")
