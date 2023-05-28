@@ -1,0 +1,26 @@
+OPERATORS = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3, '(': 0}
+
+def infix_to_postfix(infix):
+    tokens = infix.split()
+    stack = []
+    postfix = []
+    for token in tokens:
+        if token.isdigit():
+            postfix.append(token)
+        elif token in OPERATORS:
+            while stack and stack[-1] != '(' and OPERATORS[token] <= OPERATORS[stack[-1]]:
+                postfix.append(stack.pop())
+            stack.append(token)
+        elif token == '(':
+            stack.append(token)
+        elif token == ')':
+            while stack[-1] != '(':
+                postfix.append(stack.pop())
+            stack.pop()
+    while stack:
+        postfix.append(stack.pop())
+    return postfix
+    
+expression = input("Введите инфиксное выражение: ")
+postfix_expression = infix_to_postfix(expression)
+print("Постфиксное выражение:", " ".join(postfix_expression))
