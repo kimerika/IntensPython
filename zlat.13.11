@@ -1,0 +1,23 @@
+products = [
+    {"name": "Шоколад", "price": {"rub": 25, "kop": 99}},
+    {"name": "Кофе", "price": {"rub": 128, "kop": 50}},
+    {"name": "Кекс", "price": {"rub": 65, "kop": 25}},
+    {"name": "Молоко", "price": {"rub": 46, "kop": 90}},
+    {"name": "Сок", "price": {"rub": 38, "kop": 40}},
+    # Дополнительно можно добавить данные о других товарах
+]
+
+def format_price(price):
+    return price["rub"] * 100 + price["kop"]
+
+def compare_price(product1, product2):
+    price1 = format_price(product1["price"])
+    price2 = format_price(product2["price"])
+    if price1 > price2:
+        return product1["name"] + " стоит дороже"
+    elif price1 < price2:
+        return product2["name"] + " стоит дороже"
+    else:
+        return "Цена на эти товары одинакова"
+
+print(compare_price(products[0], products[1]))
