@@ -1,0 +1,32 @@
+numbers = []
+while True:
+    # Запрашиваем у пользователя число и проверяем, был ли ввод пропущен
+    number = input("Введите число (пустая строка для завершения ввода): ")
+    if not number:
+        break
+    # Если ввод не был пропущен, преобразуем строку в число и добавляем его в список
+    numbers.append(float(number))
+
+# Вычисляем среднее значение
+average = sum(numbers) / len(numbers)
+
+# Создаем списки чисел, равных/меньших/больших среднему
+equal_to_average = []
+below_average = []
+above_average = []
+for number in numbers:
+    if number == average:
+        equal_to_average.append(number)
+    elif number < average:
+        below_average.append(number)
+    else:
+        above_average.append(number)
+
+# Выводим результаты на экран
+print(f"Среднее значение: {average:.2f}")
+print("Числа, равные среднему:")
+print(equal_to_average if equal_to_average else "Нет чисел")
+print("Числа, меньшие среднего:")
+print(below_average if below_average else "Нет чисел")
+print("Числа, большие среднего:")
+print(above_average if above_average else "Нет чисел")
