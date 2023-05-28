@@ -1,0 +1,12 @@
+time1 = input("Введите первое время в формате чч:мм:сс: ")
+time2 = input("Введите второе время в формате чч:мм:сс: ")
+
+# Получаем значения часов, минут и секунд из строковых значений времени
+hour1, minute1, second1 = map(int, time1.split(':'))
+hour2, minute2, second2 = map(int, time2.split(':'))
+
+# Сравниваем первый момент времени с вторым и выводим результат
+if (hour1 < hour2) or (hour1 == hour2 and minute1 < minute2) or (hour1 == hour2 and minute1 == minute2 and second1 < second2):
+    print("Первый момент времени был раньше второго")
+else:
+    print("Первый момент времени был позже второго")
