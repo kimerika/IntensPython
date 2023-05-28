@@ -1,0 +1,50 @@
+а) 
+sentence = "Преобразовать каждое слово, заменив букву а на o" 
+ 
+for word in sentence.split(): 
+    index = word.find('а') 
+    if index != -1: 
+        word = word[:index] + 'о' + word[index + 1:] 
+    print(word) 
+ 
+ 
+б) 
+sentence = "Удалить все вхождения последней буквы в слове" 
+ 
+for word in sentence.split(): 
+    last_letter = word[-1] 
+    word = word.replace(last_letter, '') 
+    word += last_letter 
+    print(word) 
+ 
+ 
+в) 
+sentence = "Оставить в слове только первые вхождения каждой буквы" 
+ 
+for word in sentence.split(): 
+    new_word = "" 
+    for letter in word: 
+        if letter not in new_word: 
+            new_word += letter 
+    print(new_word) 
+ 
+ 
+г) 
+sentence = "Удалить среднюю(ые) букву(ы) в самом длинном слове" 
+ 
+words = sentence.split() 
+longest_word = max(words, key=len) 
+ 
+if len(longest_word) % 2 == 0: 
+    mid_indices = [int(len(longest_word) / 2) - 1, int(len(longest_word) / 2)] 
+else: 
+    mid_indices = [int(len(longest_word) / 2)] 
+ 
+for index in mid_indices: 
+    longest_word = longest_word[:index] + longest_word[index + 1:] 
+ 
+for word in words: 
+    if word == longest_word: 
+        print(longest_word) 
+    else: 
+        print(word)
