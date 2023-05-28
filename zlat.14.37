@@ -1,0 +1,19 @@
+def calculate_letter_percentage(sentence, letter):
+    count = 0
+    for l in sentence:
+        if l == letter or l == letter.upper():
+            count += 1
+    percentage = 100 * count / len(sentence)
+    return percentage
+
+sentence1 = input("Введите первое предложение: ")
+sentence2 = input("Введите второе предложение: ")
+letter = 'о' # можно заменить на любую другую букву, для которой необходимо посчитать долю
+percentage1 = calculate_letter_percentage(sentence1, letter)
+percentage2 = calculate_letter_percentage(sentence2, letter)
+if percentage1 > percentage2:
+    print("В первом предложении доля буквы {} больше".format(letter))
+elif percentage2 > percentage1:
+    print("Во втором предложении доля буквы {} больше".format(letter))
+else:
+    print("Доли буквы {} в обоих предложениях равны".format(letter))
