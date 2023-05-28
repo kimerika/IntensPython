@@ -1,0 +1,15 @@
+def get_time_num(hour, minute):
+    return hour * 60 + minute
+
+time1 = (9, 30)  # первый момент времени
+time2 = (14, 45)  # второй момент времени
+
+time1_num = get_time_num(time1[0], time1[1])  # порядковый номер первого момента времени
+time2_num = get_time_num(time2[0], time2[1])  # порядковый номер второго момента времени
+
+if time1_num < time2_num:
+    print("Первый момент времени был раньше")
+elif time1_num > time2_num:
+    print("Второй момент времени был раньше")
+else:
+    print("Оба момента времени находятся на одинаковом расстоянии от начала суток")
