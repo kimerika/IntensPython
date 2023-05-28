@@ -1,0 +1,62 @@
+import random
+
+def create_lotto_card():
+    card = {
+        'B': [],
+        'I': [],
+        'N': [],
+        'G': [],
+        'O': []
+    }
+    for letter in card:
+        lower = (ord(letter) - 65) * 15 + 1 # вычисляем нижнюю границу чисел в колонке
+        upper = lower + 14 # вычисляем верхнюю границу чисел в колонке
+        # генерируем случайные числа для каждой колонки
+        nums = random.sample(range(lower, upper + 1), 5)
+        card[letter] = nums
+    return card
+
+def display_lotto_card(card):
+    print('{:<3}{:<3}{:<3}{:<3}{:<3}'.format('B', 'I', 'N', 'G', 'O'))
+    for i in range(5):
+        row = []
+        for letter in card:
+            if card[letter][i] == 0:
+                row.append('  -')
+            else:
+                row.append(str(card[letter][i]).rjust(3))
+        print(' '.join(row))
+
+def check_lotto_win(card):
+    # проверяем выигрыш по горизонтали
+    for row in range(5):
+        if card['B'][row] == card['I'][row] == card['N'][row] == card['G'][row] == card['O'][row] == 0:
+            return True
+    
+    # проверяем выигрыш по вертикали
+    for letter in card:
+        if card[letter][0] == card[letter][1] == card[letter][2] == card[letter][3] == card[letter][4] == 0:
+            return True
+    
+    # проверяем выигрыш по диагонали
+    if card['B'][0] == card['I'][1] == card['G'][3] == card['O'][4] == 0:
+        return True
+    if card['O'][0] == card['G'][1] == card['I'][3] == card['B'][4] == 0:
+        return True
+    
+    return False
+        
+if __name__ == '__main__':
+    # создаем несколько карточек
+    cards = []
+    for i in range(5):
+        cards.append(create_lotto_card())
+    
+    # отображаем карточки и проверяем их на выигрыш
+    for card in cards:
+        display_lotto_card(card)
+        if check_lotto_win(card):
+            print("Поздравляем, вы выиграли!")
+        else:
+            print("Увы, вы проиграли! Попробуйте еще раз.")
+        print("="*30)
