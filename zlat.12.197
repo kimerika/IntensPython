@@ -1,0 +1,18 @@
+expression = input("Введите арифметическое выражение: ") 
+ 
+stack = [] 
+for i, symbol in enumerate(expression): 
+    if symbol == "(": 
+        stack.append(i) 
+    elif symbol == ")": 
+        if not stack: 
+            print("нет") 
+            print(f"Лишняя закрывающая скобка на позиции {i}") 
+            break 
+        else: 
+            stack.pop() 
+if stack: 
+    print("нет") 
+    print(f"Отсутствует {len(stack)} закрывающих скобок") 
+else: 
+    print("да")
