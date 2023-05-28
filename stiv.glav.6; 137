@@ -1,0 +1,24 @@
+import random
+
+def roll_dice():
+    """
+    Функция, выполняющая случайное выбрасывание двух обычных шестигранных костей.
+
+    :return: число, выпавшее в сумме на двух костях
+    """
+    return random.randint(1, 6) + random.randint(1, 6)
+
+# Пример использования
+results = {}
+for i in range(1000):
+    result = roll_dice()
+    if result in results:
+        results[result] += 1
+    else:
+        results[result] = 1
+
+print("{:<10}{:<20}{:<20}".format("Исход", "Процент симуляции", "Ожидаемый процент"))
+for key in sorted(results.keys()):
+    percentage = round(results[key] / 10, 2)
+    expected_percentage = round((key - 1) / 36 * 100, 2)
+    print("{:<10}{:<20}{:<20}".format(str(key), str(percentage) + "%", str(expected_percentage) + "%"))
