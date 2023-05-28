@@ -1,0 +1,16 @@
+students = [
+    {"surname": "Иванов", "class": 9, "grade": 4},
+    {"surname": "Петров", "class": 9, "grade": 5},
+    {"surname": "Сидоров", "class": 8, "grade": 3},
+    {"surname": "Сергеев", "class": 10, "grade": 5},
+    {"surname": "Кузнецов", "class": 9, "grade": 4},
+    {"surname": "Соловьев", "class": 9, "grade": 5},
+    # Дополнительно можно добавить еще данные о других учениках
+]
+
+result_names = []
+for student in students:
+    if student["class"] == 9 and student["grade"] == 5:
+        result_names.append(student["surname"])
+
+print(", ".join(result_names))
