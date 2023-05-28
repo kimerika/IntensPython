@@ -1,0 +1,23 @@
+def digit_sum(n):
+    """Функция для расчета суммы цифр натурального числа"""
+    s = 0
+    while n > 0:
+        s += n % 10
+        n //= 10
+    return s
+
+def compare_digit_sums(a, b):
+    """Функция для сравнения сумм цифр двух натуральных чисел"""
+    sum_a = digit_sum(a)
+    sum_b = digit_sum(b)
+    if sum_a > sum_b:
+        return f'Сумма цифр числа {a} больше'
+    elif sum_a < sum_b:
+        return f'Сумма цифр числа {b} больше'
+    else:
+        return 'Суммы цифр чисел равны'
+
+# Пример использования функции
+print(compare_digit_sums(123, 456))  # Сумма цифр числа 456 больше
+print(compare_digit_sums(789, 654321))  # Сумма цифр числа 654321 больше
+print(compare_digit_sums(2345, 6543))  # Суммы цифр чисел равны
