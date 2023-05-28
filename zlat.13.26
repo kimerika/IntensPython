@@ -1,0 +1,37 @@
+# Создаем словарь с данными для всех 15 автомобилей
+cars_data = {
+    'car1': {'type': 'passenger', 'price': 15000},
+    'car2': {'type': 'goods', 'price': 27000},
+    'car3': {'type': 'passenger', 'price': 19000},
+    'car4': {'type': 'goods', 'price': 31000},
+    'car5': {'type': 'passenger', 'price': 21000},
+    'car6': {'type': 'goods', 'price': 26000},
+    'car7': {'type': 'passenger', 'price': 18000},
+    'car8': {'type': 'goods', 'price': 29000},
+    'car9': {'type': 'passenger', 'price': 24000},
+    'car10': {'type': 'goods', 'price': 32000},
+    'car11': {'type': 'passenger', 'price': 22000},
+    'car12': {'type': 'goods', 'price': 34000},
+    'car13': {'type': 'passenger', 'price': 20000},
+    'car14': {'type': 'goods', 'price': 30000},
+    'car15': {'type': 'passenger', 'price': 23000}
+}
+
+# Инициализируем переменные для подсчета средней стоимости легковых автомобилей и количества легковых автомобилей
+sum_price = 0
+num_of_passenger_cars = 0
+
+# Проходимся по данным о каждом автомобиле в словаре
+for car in cars_data.values():
+
+    # Если автомобиль является легковым, то добавляем его стоимость к сумме стоимостей легковых автомобилей
+    # и увеличиваем счетчик легковых автомобилей
+    if car['type'] == 'passenger':
+        sum_price += car['price']
+        num_of_passenger_cars += 1
+
+# Считаем среднюю стоимость легковых автомобилей
+avg_price_passenger_cars = sum_price / num_of_passenger_cars
+
+# Выводим результат на экран
+print(f"Средняя стоимость легковых автомобилей: {avg_price_passenger_cars}")
