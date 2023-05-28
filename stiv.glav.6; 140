@@ -1,0 +1,17 @@
+province_dict = {'A': 'Newfoundland and Labrador', 'B': 'Nova Scotia', 'C': 'Prince Edward Island', 'E': 'New Brunswick', 'G': 'Québec', 'H': 'Québec', 'J': 'Québec', 'K': 'Ontario', 'L': 'Ontario', 'M': 'Ontario', 'N': 'Ontario', 'P': 'Ontario', 'R': 'Manitoba', 'S': 'Saskatchewan', 'T': 'Alberta', 'V': 'British Columbia', 'X': 'Nunavut or Northwest Territories', 'Y': 'Yukon'}
+    
+code = input('Введите почтовый индекс Канады: ')
+
+if code[1].isdigit() and code[3].isdigit() and code[5].isdigit():
+    if code[0].isalpha() and code[2].isalpha() and code[4].isalpha():
+        if code[0] not in ['D', 'F', 'I', 'O', 'Q', 'U', 'W', 'Z']:
+            if code[1] == '0':
+              print(f'Почтовый индекс {code} является сельской местностью в провинции {province_dict[code[0]]}.')
+            else:
+              print(f'Почтовый индекс {code} является городской местностью в провинции {province_dict[code[0]]}.')
+        else:
+            print('Ошибка: Начальный символ индекса не используется для почтовых индексов Канады.')
+    else:
+        print('Ошибка: Второй, четвертый и шестой символы должны быть буквами.')
+else:
+    print('Ошибка: Первый, третий и пятый символы должны быть цифрами.')
