@@ -1,0 +1,14 @@
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+def reduce_fraction(a, b):
+    gcd_ab = gcd(a, b)
+    p, q = a // gcd_ab, b // gcd_ab
+    return p, q
+
+a = int(input("Введите числитель: "))
+b = int(input("Введите знаменатель: "))
+p, q = reduce_fraction(a, b)
+print("Сокращенная дробь: {}/{}".format(p,q))
