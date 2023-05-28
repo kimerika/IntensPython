@@ -1,0 +1,11 @@
+sentence1 = input("Введите первое предложение: ") 
+sentence2 = input("Введите второе предложение: ") 
+ 
+words1 = sentence1.split() 
+words2 = sentence2.split() 
+ 
+for word1 in words1: 
+    if word1 in words2: 
+        print(f"{word1} есть в обоих предложениях.") 
+    else: 
+        print(f"{word1} не входит во второе предложение.")
