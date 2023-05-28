@@ -1,0 +1,30 @@
+import random
+
+def create_lotto_card():
+    card = {
+        'B': [],
+        'I': [],
+        'N': [],
+        'G': [],
+        'O': []
+    }
+    for letter in card:
+        lower = (ord(letter) - 65) * 15 + 1 # вычисляем нижнюю границу чисел в колонке
+        upper = lower + 14 # вычисляем верхнюю границу чисел в колонке
+        # генерируем случайные числа для каждой колонки
+        nums = random.sample(range(lower, upper + 1), 5)
+        card[letter] = nums
+    return card
+
+def display_lotto_card(card):
+    print('{:<3}{:<3}{:<3}{:<3}{:<3}'.format('B', 'I', 'N', 'G', 'O'))
+    for i in range(5):
+        row = []
+        for letter in card:
+            row.append(str(card[letter][i]).rjust(3))
+        print(' '.join(row))
+
+
+if __name__ == '__main__':
+    card = create_lotto_card()
+    display_lotto_card(card)
