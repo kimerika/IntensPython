@@ -1,0 +1,21 @@
+# Инициализация количества очков каждой из 20 команд как одномерного списка
+points = [23, 24, 25, 22, 26, 21, 19, 20, 18, 17, 14, 16, 15, 13, 12, 11, 10, 9, 8, 7]
+
+# Нахождение индекса команды, набравшей максимальное количество очков - чемпиона
+max_index = points.index(max(points))
+champion = "Команда " + str(max_index + 1)
+
+# Нахождение индексов команд, занявших второе и третье места
+sorted_indexes = sorted(range(len(points)), key=lambda k: points[k], reverse=True)
+second_place = "Команда " + str(sorted_indexes[1]+1)
+third_place = "Команда " + str(sorted_indexes[2]+1)
+
+# Нахождение названий команд, занявших первое и второе места, используя срезы
+top_two = ["Команда " + str(sorted_indexes[i]+1) for i in range(2)]
+
+# Вывод результатов
+print("Чемпион: " + champion)
+print("Второе место: " + second_place)
+print("Третье место: " + third_place)
+
+print("Победитель и vice-чемпион: " + ", ".join(top_two))
