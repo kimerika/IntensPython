@@ -1,0 +1,34 @@
+# определяем словарь с максимальными скоростями автомобилей
+cars = {
+    'Audi': 250,
+    'BMW': 280,
+    'Chevrolet': 200,
+    'Ferrari': 340,
+    'Ford': 210,
+    'Honda': 220,
+    'Hyundai': 200,
+    'Jaguar': 260,
+    'Kia': 210,
+    'Lamborghini': 355,
+    'Mazda': 240,
+    'Mercedes-Benz': 305,
+    'Nissan': 260,
+    'Porsche': 350,
+    'Renault': 230,
+    'Seat': 240,
+    'Subaru': 280,
+    'Toyota': 280,
+    'Volkswagen': 230,
+    'Volvo': 240
+}
+
+# находим все автомобили, у которых максимальная скорость больше 180 км/ч
+fast_cars = []
+for car, max_speed in cars.items():
+    if max_speed > 180:
+        fast_cars.append(car)
+
+# выводим список быстрых автомобилей
+print("Автомобили с максимальной скоростью больше 180 км/ч:")
+for car in fast_cars:
+    print(car)
