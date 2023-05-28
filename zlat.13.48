@@ -1,0 +1,19 @@
+points = [68, 65, 62, 59, 56, 53, 50, 47, 44, 41, 38, 35, 32, 29, 26, 23, 20, 17, 14, 11]
+teams = ["Real Madrid", "Barcelona", "Atletico Madrid", "Valencia", "Sevilla", "Villarreal",
+        "Real Sociedad", "Athletic Bilbao", "Malaga", "Celta Vigo", "Espanyol", "Rayo Vallecano", 
+        "Real Betis", "Deportivo La Coruna", "Levante", "Getafe", "Granada", "Elche", "Almeria",
+        "New Team"]
+
+# создадим словарь вида {команда: очки}
+team_points = {}
+for i in range(len(teams)):
+    team_points[teams[i]] = points[i]
+
+# сортируем словарь по убыванию очков и сохраняем команды и их места в новый список
+sorted_teams = []
+for rank, (team, point) in enumerate(sorted(team_points.items(), key=lambda x: x[1], reverse=True)):
+    sorted_teams.append((rank+1, team))  
+
+print("Названия команд в соответствии с занятыми ими местами:")
+for team in sorted_teams:
+    print(f'{team[0]} место - {team[1]}')
