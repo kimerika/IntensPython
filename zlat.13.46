@@ -1,0 +1,9 @@
+heights = [175, 173, 171, 169, 167, 165, 163, 161, 159, 157, 155, 153, 151, 149, 147]
+new_height = 172
+
+heights.append(new_height)
+heights.sort(reverse=True)
+
+print("Отсортированный список учеников по росту:")
+for height in heights:
+    print(height)
