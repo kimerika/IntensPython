@@ -1,0 +1,9 @@
+string = input('Введите строку: ')
+
+char_dict = {}
+for char in string:
+    if char not in char_dict:
+        char_dict[char] = 1
+
+unique_count = len(char_dict)
+print(f'Количество уникальных символов в строке "{string}" равно {unique_count}.')
