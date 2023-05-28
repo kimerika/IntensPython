@@ -1,0 +1,43 @@
+# Создаем словарь с данными для всех 22 человек
+people_data = {
+    'person1': {'gender': 'male', 'height': 175},
+    'person2': {'gender': 'female', 'height': 160},
+    'person3': {'gender': 'male', 'height': 180},
+    'person4': {'gender': 'female', 'height': 165},
+    'person5': {'gender': 'male', 'height': 182},
+    'person6': {'gender': 'female', 'height': 172},
+    'person7': {'gender': 'male', 'height': 178},
+    'person8': {'gender': 'female', 'height': 155},
+    'person9': {'gender': 'male', 'height': 183},
+    'person10': {'gender': 'female', 'height': 170},
+    'person11': {'gender': 'male', 'height': 177},
+    'person12': {'gender': 'female', 'height': 160},
+    'person13': {'gender': 'male', 'height': 185},
+    'person14': {'gender': 'female', 'height': 168},
+    'person15': {'gender': 'male', 'height': 191},
+    'person16': {'gender': 'female', 'height': 167},
+    'person17': {'gender': 'male', 'height': 180},
+    'person18': {'gender': 'female', 'height': 175},
+    'person19': {'gender': 'male', 'height': 183},
+    'person20': {'gender': 'female', 'height': 170},
+    'person21': {'gender': 'male', 'height': 175},
+    'person22': {'gender': 'female', 'height': 165}
+}
+
+# Инициализируем переменные для подсчета среднего роста и количества мужчин
+sum_height = 0
+num_of_males = 0
+
+# Проходимся по данным о каждом человеке в словаре
+for person in people_data.values():
+
+    # Если человек мужского пола, то добавляем его рост к сумме ростов мужчин и увеличиваем счетчик мужчин
+    if person['gender'] == 'male':
+        sum_height += person['height']
+        num_of_males += 1
+
+# Считаем средний рост мужчин
+avg_height_males = sum_height / num_of_males
+
+# Выводим результат на экран
+print(f"Средний рост мужчин: {avg_height_males}")
