@@ -1,0 +1,11 @@
+sentence1 = input("Введите первое предложение: ") 
+sentence2 = input("Введите второе предложение: ") 
+ 
+words1 = sentence1.split() 
+words2 = sentence2.split() 
+ 
+unique_words = set(words1).symmetric_difference(set(words2)) 
+ 
+print("Слова, которые есть только в одном из предложений:") 
+for word in unique_words: 
+    print(word)
