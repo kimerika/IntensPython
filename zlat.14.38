@@ -1,0 +1,18 @@
+def last_index_of_letter(sentence, letter):
+    last_index = -1
+    for i in range(len(sentence)):
+        if sentence[i] == letter or sentence[i] == letter.upper():
+            last_index = i
+    return last_index
+
+sentence1 = input("Введите первое предложение: ")
+sentence2 = input("Введите второе предложение: ")
+letter = 'й' # можно заменить на любую другую букву, для которой необходимо найти последнее вхождение
+last_index1 = last_index_of_letter(sentence1, letter)
+last_index2 = last_index_of_letter(sentence2, letter)
+if last_index1 > last_index2:
+    print("В первом предложении буква '{}' имеет больший порядковый номер".format(letter))
+elif last_index2 > last_index1:
+    print("Во втором предложении буква '{}' имеет больший порядковый номер".format(letter))
+else:
+    print("Буква '{}' имеет одинаковый порядковый номер в обоих предложениях".format(letter))
