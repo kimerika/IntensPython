@@ -1,0 +1,24 @@
+def trapezoid_area(a, b, h):
+    """Функция вычисляет площадь равнобедренной трапеции"""
+    area = (a + b) / 2 * h
+    return area
+
+def trapezoid_perimeter(a, b, h):
+    """Функция вычисляет периметр равнобедренной трапеции"""
+    c = ((a - b) / 2)**2 + h**2
+    perimeter = a + b + 2 * math.sqrt(c)
+    return perimeter
+
+a1 = float(input("Введите длину основания a1 первой трапеции: ")) 
+b1 = float(input("Введите длину основания b1 первой трапеции: ")) 
+h1 = float(input("Введите высоту h1 первой трапеции: ")) 
+
+a2 = float(input("Введите длину основания a2 второй трапеции: ")) 
+b2 = float(input("Введите длину основания b2 второй трапеции: ")) 
+h2 = float(input("Введите высоту h2 второй трапеции: ")) 
+
+perimeter_sum = trapezoid_perimeter(a1, b1, h1) + trapezoid_perimeter(a2, b2, h2)
+area_sum = trapezoid_area(a1, b1, h1) + trapezoid_area(a2, b2, h2)
+
+print("Сумма периметров двух трапеций равна:", perimeter_sum)
+print("Сумма площадей двух трапеций равна:", area_sum)
