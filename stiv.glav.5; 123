@@ -1,0 +1,34 @@
+def pig_latin(word):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    punctuation = ['.', ',', '!', '?']
+    capitalized = False
+    
+    if word[0].isupper():
+        capitalized = True
+        word = word.lower()
+        
+    if word[-1] in punctuation:
+        end_punc = word[-1]
+        word = word[:-1]
+    else:
+        end_punc = ''
+    
+    if word[0] in vowels:
+        pig_word = word + 'way'
+    else:
+        pig_word = word[1:] + word[0] + 'ay'
+    
+    if capitalized:
+        pig_word = pig_word.capitalize()
+    
+    return pig_word + end_punc
+
+
+def translate_sentence(sentence):
+    words = sentence.split()
+    translated_words = []
+    
+    for word in words:
+        translated_words.append(pig_latin(word))
+    
+    return ' '.join(translated_words)
