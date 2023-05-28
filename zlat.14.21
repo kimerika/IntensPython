@@ -1,0 +1,11 @@
+def is_perfect_square(num):
+    # Функция, определяющая, является ли число полным квадратом
+    return int(num**0.5)**2 == num
+
+p = 10
+a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# Используем list comprehension для создания списка всех полных квадратов из последовательности
+perfect_squares = [num for num in a if is_perfect_square(num) and num <= p]
+
+print("Количество чисел, являющихся полными квадратами:", len(perfect_squares))
