@@ -1,0 +1,54 @@
+а) Условный порядковый номер:
+
+from datetime import datetime
+
+dates = [
+    {"year": 2021, "month": 10, "day": 15},  # событие 1
+    {"year": 2020, "month": 9, "day": 1},    # событие 2
+    {"year": 2019, "month": 8, "day": 4},    # событие 3
+    {"year": 2021, "month": 1, "day": 1}     # событие 4
+]
+
+def get_date_num(date):
+    return datetime(date["year"], date["month"], date["day"]).timestamp()
+
+event1 = 1  # условный порядковый номер первого события
+event2 = 2  # условный порядковый номер второго события
+
+event1_num = get_date_num(dates[event1 - 1])  # порядковый номер первого события
+event2_num = get_date_num(dates[event2 - 1])  # порядковый номер второго события
+
+if event1_num < event2_num:
+    print("Событие {} произошло раньше".format(event1))
+elif event1_num > event2_num:
+    print("Событие {} произошло позже".format(event1))
+else:
+    print("Оба события произошли в одинаковое время")
+
+
+б) Текстовое описание:
+
+from datetime import datetime
+
+dates = [
+    {"year": 2021, "month": 10, "day": 15},  # событие 1
+    {"year": 2020, "month": 9, "day": 1},    # событие 2
+    {"year": 2019, "month": 8, "day": 4},    # событие 3
+    {"year": 2021, "month": 1, "day": 1}     # событие 4
+]
+
+def get_date_text(date):
+    return datetime(date["year"], date["month"], date["day"]).strftime("%d.%m.%Y")
+
+event1 = "событие 1"  # текстовое описание первого события
+event2 = "событие 2"  # текстовое описание второго события
+
+event1_text = get_date_text(dates[0])  # текстовое описание первого события
+event2_text = get_date_text(dates[1])  # текстовое описание второго события
+
+if dates[0] < dates[1]:
+    print("{} произошло раньше, чем {}".format(event1, event2))
+elif dates[0] > dates[1]:
+    print("{} произошло позже, чем {}".format(event1, event2))
+else:
+    print("{} и {} произошли в одинаковое время".format(event1, event2))
