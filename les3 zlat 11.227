@@ -1,0 +1,13 @@
+а)lengths = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+widths = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+heights = [0.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5]
+for i in range(len(lengths)):
+    volume = lengths[i] * widths[i] * heights[i]
+    print("Volume of parallelepiped", i+1, "is", volume)
+б)lengths = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+widths = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+heights = [0.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5]
+volumes = []
+for i in range(len(lengths)):
+    volumes.append(lengths[i] * widths[i] * heights[i])
+print("Volumes of parallelepipeds:", volumes)
