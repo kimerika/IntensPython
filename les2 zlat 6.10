@@ -1,0 +1,8 @@
+password = 1234
+while True:
+    user_password = int(input("Введите пароль: "))
+    if user_password == password:
+        print("Добро пожаловать!")
+        break
+    else:
+        print("Ошибка: неправильный пароль. Попробуйте еще раз.")
