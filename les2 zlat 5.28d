@@ -1,0 +1,6 @@
+a = int(input("Введите значение а: "))
+b = int(input("Введите значение b: "))
+prod_d = 1
+for i in range(a, b+1):
+    prod_d *= i
+print("Произведение от", a, "до", b, "=", prod_d)

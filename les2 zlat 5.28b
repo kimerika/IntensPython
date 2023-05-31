@@ -1,0 +1,5 @@
+a = int(input("Введите значение а от 1 до 15: "))
+prod_b = 1
+for i in range(a, 16):
+    prod_b *= i
+print("Произведение от", a, "до 15 =", prod_b)

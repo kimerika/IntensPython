@@ -1,0 +1,21 @@
+n = int(input("Введите значение n: "))
+number = int(input("Введите натуральное число: "))
+count = 0
+temp = number
+sum = 0
+prod = 1
+
+# Считаем количество цифр в числе
+while temp != 0:
+    count += 1
+    temp //= 10
+
+# Извлекаем последовательно n цифр
+for i in range(n):
+    digit = number % 10
+    sum += digit
+    prod *= digit
+    number //= 10
+
+print("Сумма:", sum)
+print("Произведение:", prod)

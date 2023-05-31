@@ -1,0 +1,4 @@
+prod_a = 1
+for i in range(7, 15):
+    prod_a *= i
+print("Произведение от 7 до 14 =", prod_a)
