@@ -1,0 +1,4 @@
+exchange_rate = float(input("Введите текущий курс доллара: "))
+for dollars in range(1, 21):
+    rubles = dollars * exchange_rate
+    print(f"{dollars} доллар = {rubles:.2f} рублей")

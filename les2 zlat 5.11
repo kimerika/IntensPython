@@ -1,0 +1,6 @@
+import math
+
+R = 6350
+for h in range(1, 11):
+    d = 2 * math.sqrt((R + h) ** 2 - R ** 2)
+    print(f"Расстояние до линии горизонта на высоте {h} км = {d:.2f} км")

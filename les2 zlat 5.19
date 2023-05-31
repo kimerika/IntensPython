@@ -1,0 +1,7 @@
+import math
+
+# Вычисляем sin каждого значения от 0.1 до 1.5 (в радианах)
+for i in range(1, 16):
+    x = i / 10
+    sin_x = math.sin(x)
+    print("{:.2f}".format(sin_x))

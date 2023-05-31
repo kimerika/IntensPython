@@ -1,0 +1,3 @@
+p = float(input("Введите число для таблицы умножения: "))
+for i in range(1, 11):
+    print(f"{i} x {p} = {i*p}")
