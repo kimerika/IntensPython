@@ -1,0 +1,12 @@
+a = float(input("Введите обьем 1: "))
+b = float(input("Введите массу 1: "))
+a1 = float(input("Введите обьем 2: "))
+b1 = float(input("Введите массу 2: "))
+c = b/a
+c1 = b1/a1
+if c > c1:
+  print("плотность 1 больше")
+elif c1 > c:
+  print("плотность 2 больше")
+else:
+  print("плотности равно")

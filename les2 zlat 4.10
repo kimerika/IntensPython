@@ -1,0 +1,9 @@
+distance_km = float(input("Введите расстояние в километрах: "))
+distance_ft = float(input("Введите расстояние в футах: "))
+
+distance_ft_to_km = distance_ft * 0.3048 # переводим расстояние в футах в километры
+
+if distance_km < distance_ft_to_km:
+    print("Расстояние в километрах меньше")
+else:
+    print("Расстояние в футах меньше")

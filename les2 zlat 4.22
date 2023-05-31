@@ -1,0 +1,12 @@
+def check_divisibility(t, p):
+    if t % p == 0:
+        print("Частное от деления: ", t // p)
+    else:
+        print("т на p нацело не делится")
+if __name__ == "__main__":
+    # пример t и p
+    t = float(input("Введите t : "))
+    p = float(input("Введите p : "))
+    
+    # проверяем делится ли t на p нацело
+    check_divisibility(t, p)

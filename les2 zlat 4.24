@@ -1,0 +1,18 @@
+def is_even(num):
+    if num % 2 == 0:
+        return f"{num} - четное число"
+    else:
+        return f"{num} - нечетное число"
+
+def ends_with_7(num):
+    if num % 10 == 7:
+        return f"{num} оканчивается на 7"
+    else:
+        return f"{num} не оканчивается на 7"
+if __name__ == "__main__":
+    # пример числа
+    num = float(input("Введите num : "))
+    # проверяем, является ли число четным
+    print(is_even(num))
+    # проверяем, оканчивается ли число на 7
+    print(ends_with_7(num))

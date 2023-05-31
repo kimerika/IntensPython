@@ -1,0 +1,9 @@
+def is_divisor(a, n):
+    if n % a == 0:
+        return f"{a} является делителем {n}"
+    else:
+        return f"{a} не является делителем {n}"
+if __name__ == "__main__":
+    a = float(input("Введите a : "))
+    n = float(input("Введите n : "))
+    print(is_divisor(a, n))

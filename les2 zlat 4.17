@@ -1,0 +1,15 @@
+current_year = float(input("нынешний год : ")
+current_month = float(input("нынешний месяц: ")
+birth_year = float(input("ваш год : ")
+birth_month = float(input("ваш месяц : ")
+
+age = current_year - birth_year
+if current_month < birth_month:
+    age -= 1
+elif current_month == birth_month:
+    current_day = 15  # номер текущего дня
+    birth_day = 10  # номер дня рождения
+    if current_day < birth_day:
+        age -= 1
+
+print("Возраст:", age)

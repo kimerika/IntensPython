@@ -1,0 +1,12 @@
+а)
+a = float(input("Введите площадь круга : "))
+b = float(input("Введите площадь трекгольника b: "))
+if a <= b:
+  print("Круг залетел")
+else:
+  print("не получилось")
+б)
+from math import pi 
+strian = float(input())
+sc = float(input())
+print(4*pi*strian <= 3**(3/2)*sc)

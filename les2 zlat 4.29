@@ -1,0 +1,10 @@
+n = int(input())
+a = int(input())
+if len(str(n % 10 + n // 10)) == 2:
+  print('YES')
+elif len(str(n % 10 + n // 10)) != 2:
+  print('NO')
+if n % 10 + n // 10 > a:
+  print('YES')
+elif  n % 10 + n // 10 <= a:
+  print('NO')
