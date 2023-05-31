@@ -1,0 +1,2 @@
+python
+print(1 if a % b == 0 or b % a == 0 else 2)

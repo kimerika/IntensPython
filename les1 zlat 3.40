@@ -1,0 +1,5 @@
+for c in range(10):
+    for a in range(10):
+        for b in range(10):
+            if a + b == (654 - 100*c) // 11 and (10*a + b) // 10 == (100*c + 10*b + a) // 10:
+                print(100*a + 10*b + c)

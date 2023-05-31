@@ -1,0 +1,11 @@
+num = int(input("Введите трехзначное число: "))
+if num < 100 or num > 999:
+    print("Ошибка ввода")
+else:
+    hundreds = num // 100
+    tens = (num % 100) // 10
+    ones = num % 10
+    print("а) Число единиц в числе:", ones)
+    print("б) Число десятков в числе:", tens)
+    print("в) Сумма цифр числа:", hundreds + tens + ones)
+    print("г) Произведение цифр числа:", hundreds * tens * ones)

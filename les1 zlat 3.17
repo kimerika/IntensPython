@@ -1,0 +1,8 @@
+num = int(input("Введите двузначное число: "))
+if num < 10 or num > 99:
+    print("Ошибка ввода")
+else:
+    tens = num // 10
+    ones = num % 10
+    print("Сумма цифр числа:", tens + ones)
+

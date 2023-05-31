@@ -1,0 +1,20 @@
+number = int(input("Введите трехзначное число, в котором все цифры различны: "))
+
+digit1 = number // 100
+digit2 = (number // 10) % 10
+digit3 = number % 10
+
+number1 = digit1 * 100 + digit2 * 10 + digit3
+number2 = digit1 * 100 + digit3 * 10 + digit2
+number3 = digit2 * 100 + digit1 * 10 + digit3
+number4 = digit2 * 100 + digit3 * 10 + digit1
+number5 = digit3 * 100 + digit1 * 10 + digit2
+number6 = digit3 * 100 + digit2 * 10 + digit1
+
+print("Шесть чисел, образованных при перестановке цифр за данного числа:")
+print(number1)
+print(number2)
+print(number3)
+print(number4)
+print(number5)
+print(number6)

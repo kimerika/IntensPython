@@ -1,0 +1,6 @@
+p = int(input("Введите число p: "))
+second_digit = p % 10
+two_digit_number = second_digit * 10 + p // 10 % 10
+first_digit = p // 100
+x = first_digit * 100 + two_digit_number
+print("Число x равно", x)
