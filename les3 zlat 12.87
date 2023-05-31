@@ -1,0 +1,17 @@
+word1 = input("Введите первое слово: ")
+word2 = input("Введите второе слово: ")
+
+# Если слова разные:
+if word1 != word2:
+    count = 0
+    for i in range(min(len(word1), len(word2))):
+        if word1[i] == word2[i]:
+            count += 1
+        else:
+            break
+
+# Если слова одинаковые:
+if word1 == word2:
+    count = len(word1)
+
+print("Количество совпадающих начальных букв: ", count)

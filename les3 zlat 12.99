@@ -1,0 +1,3 @@
+sentence = input("Введите предложение: ")
+newsentence = sentence.replace(" ", "")
+print(f"Предложение с заменой пробелов символом '': {newsentence}")

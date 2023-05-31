@@ -1,0 +1,3 @@
+string = input("Введите строку: ")
+count = string.count("или")
+print(f"Слово 'или' встречается в строке {count} раз(-а)")

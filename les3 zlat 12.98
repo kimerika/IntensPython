@@ -1,0 +1,4 @@
+sentence = input("Введите предложение: ")
+new_sentence = sentence.replace("е", "и")
+print(f"Исходное предложение: {sentence}")
+print(f"Предложение с заменой буквы 'е' на букву 'и': {new_sentence}")
