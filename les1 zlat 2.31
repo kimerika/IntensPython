@@ -1,0 +1,15 @@
+# Вводим стоимость 1 кг конфет, печенья и яблок 
+candy_price = float(input("Введите стоимость 1 кг конфет: ")) 
+cookie_price = float(input("Введите стоимость 1 кг печенья: ")) 
+apple_price = float(input("Введите стоимость 1 кг яблок: ")) 
+ 
+# Вводим количество кг конфет, печенья и яблок 
+candy_amount = float(input("Введите количество кг конфет, которое вы купили: ")) 
+cookie_amount = float(input("Введите количество кг печенья, которое вы купили: ")) 
+apple_amount = float(input("Введите количество кг яблок, которое вы купили: ")) 
+ 
+# Находим стоимость всей покупки 
+total_cost = candy_price * candy_amount + cookie_price * cookie_amount + apple_price * apple_amount 
+ 
+# Выводим результаты 
+print("Стоимость всей покупки: ", total_cost)

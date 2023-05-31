@@ -1,0 +1,8 @@
+import math 
+ 
+outer_radius = float(input("Введите внешний радиус кольца: ")) 
+inner_radius = float(input("Введите внутренний радиус кольца: ")) 
+ 
+area = math.pi * (outer_radius**2 - inner_radius**2) 
+ 
+print("Площадь кольца равна:", area)

@@ -1,0 +1,12 @@
+num1 = float(input("Введите первое число: ")) 
+num2 = float(input("Введите второе число: ")) 
+ 
+sum = num1 + num2 
+difference = num1 - num2 
+product = num1 * num2 
+quotient = num1 / num2 
+ 
+print("Сумма чисел: ", sum) 
+print("Разность чисел: ", difference) 
+print("Произведение чисел: ", product) 
+print("Частное от деления первого числа на второе: ", quotient)

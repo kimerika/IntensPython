@@ -1,0 +1,10 @@
+p = int(input("Введите количество секунд: "))
+hours = p // 3600
+minutes = (p % 3600) // 60
+seconds = (p % 60)
+print(f"С начала суток прошло {hours} часов, {minutes} минут, {seconds} секунд")
+minutes_passed = (p % 3600) // 60
+seconds_passed = p % 60
+print(f"С начала очередного часа прошло {minutes_passed} минут, {seconds_passed} секунд")
+seconds_passed = p % 60
+print(f"С начала очередной минуты прошло {seconds_passed} секунд")

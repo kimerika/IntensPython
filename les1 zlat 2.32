@@ -1,0 +1,9 @@
+monitor_cost = 100
+system_block_cost = 500
+keyboard_cost = 50
+mouse_cost = 20
+
+total_cost = (monitor_cost + system_block_cost + keyboard_cost + mouse_cost) * 3
+
+print("The total cost of 3 computers is:", total_cost)
+

@@ -1,0 +1,10 @@
+import math 
+ 
+base1 = float(input("Введите длину первого основания: ")) 
+base2 = float(input("Введите длину второго основания: ")) 
+angle = float(input("Введите угол при большем основании в градусах: ")) 
+ 
+height = (base2 - base1)/(2*math.tan(math.radians(angle/2))) 
+area = (base1 + base2)*height/2 
+ 
+print("Площадь равнобедренной трапеции: ", area)

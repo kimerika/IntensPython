@@ -1,0 +1,7 @@
+import math
+
+x = float(input("Введите значение x: "))
+
+result = math.sin((3.2 + math.sqrt(1+x)) / (abs(5*x))
+
+print("Результат вычисления функции: ", result)

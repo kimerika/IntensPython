@@ -1,0 +1,8 @@
+a = float(input("Введите значение стороны a: ")) 
+b = float(input("Введите значение стороны b: ")) 
+ 
+perimeter = 2 * (a + b) 
+diagonal = math.sqrt(a**2 + b**2) 
+ 
+print("Периметр прямоугольника: ", perimeter) 
+print("Длина диагонали прямоугольника: ", diagonal)
